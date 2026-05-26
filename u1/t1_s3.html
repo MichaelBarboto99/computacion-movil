@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipos de Apps | Computación Móvil</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="../logo_computacion_movil.svg">
+    <style>
+        :root {
+            --azul-oscuro: #1a2e44;
+            --naranja: #f37021;
+            --gris-fondo: #f8f9fa;
+            --blanco: #ffffff;
+            --texto: #444;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            background-color: var(--gris-fondo);
+            color: var(--texto);
+        }
+
+        nav {
+            background-color: var(--azul-oscuro);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a { color: white; text-decoration: none; font-weight: bold; }
+
+        .container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            background: var(--blanco);
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.05);
+        }
+
+        .header-tema {
+            border-bottom: 3px solid var(--naranja);
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+        }
+
+        h1 { color: var(--azul-oscuro); margin: 0; }
+        h2 { color: var(--azul-oscuro); border-left: 5px solid var(--naranja); padding-left: 15px; margin-top: 2.5rem; }
+
+        /* Estilo para las secciones de tipos de apps */
+        .type-section {
+            margin-bottom: 3rem;
+            padding: 20px;
+            border-radius: 8px;
+            background: #fff;
+        }
+
+        .pros-cons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 15px;
+        }
+
+        .pros { border-top: 3px solid #28a745; padding-top: 10px; }
+        .cons { border-top: 3px solid #dc3545; padding-top: 10px; }
+
+        .example-tag {
+            display: inline-block;
+            background: #e9ecef;
+            padding: 2px 10px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            margin-right: 5px;
+            margin-top: 10px;
+        }
+
+        /* Tabla comparativa */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            font-size: 0.9rem;
+        }
+
+        table th { background-color: var(--azul-oscuro); color: white; padding: 12px; text-align: left; }
+        table td { padding: 12px; border: 1px solid #ddd; }
+        table tr:nth-child(even) { background-color: #f2f2f2; }
+
+        .page-nav {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #eee;
+        }
+
+        .btn-nav { padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: bold; }
+        .btn-prev { background: #eee; color: #555; }
+        .btn-next { background: var(--azul-oscuro); color: white; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="../index.html"><i class="fas fa-home"></i> Inicio</a>
+        <span style="color: white;">Unidad 1 > Tema 1</span>
+    </nav>
+
+    <div class="container">
+        <div class="header-tema">
+            <span style="color: var(--naranja); font-weight: bold;">SUBTEMA 3</span>
+            <h1>Tipos de apps</h1>
+        </div>
+
+        <p>Existen tres categorías principales de aplicaciones móviles, cada una definida por su lenguaje de programación y la forma en que se ejecutan en el dispositivo.</p>
+
+        <!-- 1. NATIVAS -->
+        <section class="type-section">
+            <h2>1. Aplicaciones Nativas</h2>
+            <p>Se desarrollan específicamente para un único sistema operativo (Android o iOS) utilizando el lenguaje propio de cada plataforma (Kotlin/Java para Android, Swift para iOS).</p>
+            
+            <div class="pros-cons">
+                <div class="pros">
+                    <strong><i class="fas fa-check-circle text-success"></i> Ventajas</strong>
+                    <ul>
+                        <li>Mejor rendimiento y velocidad.</li>
+                        <li>Acceso total al hardware (GPS, cámara, sensores).</li>
+                        <li>Funcionan sin conexión (offline).</li>
+                    </ul>
+                </div>
+                <div class="cons">
+                    <strong><i class="fas fa-times-circle text-danger"></i> Desventajas</strong>
+                    <ul>
+                        <li>Altos costos (dos códigos distintos).</li>
+                        <li>Tiempo de desarrollo: 4 a 6 meses.</li>
+                    </ul>
+                </div>
+            </div>
+            <div>
+                <strong>Ejemplos:</strong>
+                <span class="example-tag">WhatsApp</span><span class="example-tag">Spotify</span><span class="example-tag">Pokémon Go</span>
+            </div>
+        </section>
+
+        <!-- 2. WEB APPS -->
+        <section class="type-section">
+            <h2>2. Aplicaciones Web (Web Apps)</h2>
+            <p>Son sitios web optimizados que se ejecutan dentro del navegador móvil. Se desarrollan con HTML5, CSS y JavaScript.</p>
+            
+            <div class="pros-cons">
+                <div class="pros">
+                    <strong><i class="fas fa-check-circle"></i> Ventajas</strong>
+                    <ul>
+                        <li>Multiplataforma (un solo desarrollo).</li>
+                        <li>No ocupan memoria en el dispositivo.</li>
+                        <li>Bajo costo y tiempo de desarrollo.</li>
+                    </ul>
+                </div>
+                <div class="cons">
+                    <strong><i class="fas fa-times-circle"></i> Desventajas</strong>
+                    <ul>
+                        <li>Requieren internet siempre.</li>
+                        <li>Acceso muy limitado al hardware.</li>
+                        <li>Rendimiento depende del navegador.</li>
+                    </ul>
+                </div>
+            </div>
+            <div>
+                <strong>Ejemplos:</strong>
+                <span class="example-tag">Google Docs</span><span class="example-tag">Trello</span><span class="example-tag">Netflix (Web)</span>
+            </div>
+        </section>
+
+        <!-- 3. HÍBRIDAS -->
+        <section class="type-section">
+            <h2>3. Aplicaciones Híbridas</h2>
+            <p>Combinan elementos de las dos anteriores. Se programan con tecnologías web pero se "envuelven" en un contenedor nativo para instalarse como una app normal.</p>
+            
+            <div class="pros-cons">
+                <div class="pros">
+                    <strong><i class="fas fa-check-circle"></i> Ventajas</strong>
+                    <ul>
+                        <li>Única base de código para iOS y Android.</li>
+                        <li>Tiempo de desarrollo: ~3 meses.</li>
+                        <li>Se pueden subir a la App Store / Play Store.</li>
+                    </ul>
+                </div>
+                <div class="cons">
+                    <strong><i class="fas fa-times-circle"></i> Desventajas</strong>
+                    <ul>
+                        <li>Rendimiento inferior a las nativas.</li>
+                        <li>Tamaño de archivo más pesado.</li>
+                    </ul>
+                </div>
+            </div>
+            <div>
+                <strong>Ejemplos:</strong>
+                <span class="example-tag">Instagram</span><span class="example-tag">Uber</span><span class="example-tag">Evernote</span>
+            </div>
+        </section>
+
+        <!-- TABLA RESUMEN -->
+        <h2>Resumen Comparativo</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Característica</th>
+                    <th>Nativa</th>
+                    <th>Web App</th>
+                    <th>Híbrida</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Rendimiento</strong></td>
+                    <td>Muy Alto</td>
+                    <td>Bajo</td>
+                    <td>Medio</td>
+                </tr>
+                <tr>
+                    <td><strong>Costo</strong></td>
+                    <td>Alto</td>
+                    <td>Bajo</td>
+                    <td>Medio</td>
+                </tr>
+                <tr>
+                    <td><strong>Acceso Hardware</strong></td>
+                    <td>Total</td>
+                    <td>Limitado</td>
+                    <td>Parcial</td>
+                </tr>
+                <tr>
+                    <td><strong>Instalación</strong></td>
+                    <td>Tiendas (App Store)</td>
+                    <td>No requiere</td>
+                    <td>Tiendas (App Store)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="page-nav">
+            <a href="t1_s2.html" class="btn-nav btn-prev"><i class="fas fa-arrow-left"></i> Subtema 2: Características</a>
+            <a href="t1_s4.html" class="btn-nav btn-next">Subtema 4: Beneficios <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </div>
+
+    <footer style="text-align: center; padding: 2rem; font-size: 0.8rem; color: #888;">
+        UNEMI - Computación Móvil
+    </footer>
+
+</body>
+</html>

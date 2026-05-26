@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Características Multiplataforma | Computación Móvil</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="../logo_computacion_movil.svg">
+    <style>
+        :root {
+            --azul-oscuro: #1a2e44;
+            --naranja: #f37021;
+            --gris-fondo: #f8f9fa;
+            --blanco: #ffffff;
+            --texto: #444;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            background-color: var(--gris-fondo);
+            color: var(--texto);
+        }
+
+        nav {
+            background-color: var(--azul-oscuro);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a { color: white; text-decoration: none; font-weight: bold; }
+
+        .container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            background: var(--blanco);
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.05);
+        }
+
+        .header-tema {
+            border-bottom: 3px solid var(--naranja);
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+        }
+
+        /* Grid de Pilares */
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 25px;
+            margin: 2rem 0;
+        }
+
+        .pillar-card {
+            display: flex;
+            gap: 20px;
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid #eee;
+        }
+
+        .pillar-card i {
+            font-size: 2rem;
+            color: var(--naranja);
+            min-width: 50px;
+        }
+
+        .pillar-card h3 {
+            margin: 0 0 10px 0;
+            color: var(--azul-oscuro);
+            font-size: 1.2rem;
+        }
+
+        /* Sección de Ventajas (Checklist) */
+        .advantages-section {
+            background-color: var(--azul-oscuro);
+            color: white;
+            padding: 2.5rem;
+            border-radius: 10px;
+            margin-top: 3rem;
+        }
+
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
+            margin-top: 1.5rem;
+        }
+
+        .advantage-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.95rem;
+        }
+
+        .advantage-item i {
+            color: var(--naranja);
+        }
+
+        .page-nav {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #eee;
+        }
+
+        .btn-nav {
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .btn-prev { background: #eee; color: #555; }
+        .btn-next { background: var(--azul-oscuro); color: white; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="../index.html"><i class="fas fa-home"></i> Inicio</a>
+        <span style="color: white;">Unidad 2 > Tema 1</span>
+    </nav>
+
+    <div class="container">
+        <div class="header-tema">
+            <span style="color: var(--naranja); font-weight: bold;">TEMA 1 - SUBTEMA 2</span>
+            <h1>Características de una app multiplataforma</h1>
+        </div>
+
+        <section>
+            <p>Las aplicaciones multiplataforma han ganado una enorme popularidad gracias a su versatilidad y a que resuelven problemas históricos del desarrollo de software.</p>
+
+            <div class="pillars-grid">
+                <!-- Pilar 1 -->
+                <div class="pillar-card">
+                    <i class="fas fa-layer-group"></i>
+                    <div>
+                        <h3>Versatilidad en Plataformas</h3>
+                        <p>Habilidad para operar sin inconvenientes en Android, iOS, Windows y macOS simultáneamente.</p>
+                    </div>
+                </div>
+
+                <!-- Pilar 2 -->
+                <div class="pillar-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <div>
+                        <h3>Eliminación de Barreras</h3>
+                        <p>Se eliminan las normativas y requisitos únicos de cada sistema que antes requerían equipos separados.</p>
+                    </div>
+                </div>
+
+                <!-- Pilar 3 -->
+                <div class="pillar-card">
+                    <i class="fas fa-piggy-bank"></i>
+                    <div>
+                        <h3>Ahorro de Tiempo y Recursos</h3>
+                        <p>Los equipos se centran en perfeccionar <strong>un único código base</strong> en lugar de distribuir esfuerzos.</p>
+                    </div>
+                </div>
+
+                <!-- Pilar 4 -->
+                <div class="pillar-card">
+                    <i class="fas fa-chart-line"></i>
+                    <div>
+                        <h3>Fomento de la Innovación</h3>
+                        <p>Los desarrolladores se concentran en crear características creativas en lugar de lidiar con la complejidad técnica de cada SO.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="advantages-section">
+                <h2><i class="fas fa-star"></i> Ventajas Principales</h2>
+                <div class="advantages-grid">
+                    <div class="advantage-item"><i class="fas fa-check-circle"></i> Operan en todos los SO de manera inherente.</div>
+                    <div class="advantage-item"><i class="fas fa-check-circle"></i> Ahorro significativo en costes.</div>
+                    <div class="advantage-item"><i class="fas fa-check-circle"></i> Menor tiempo de desarrollo que las nativas.</div>
+                    <div class="advantage-item"><i class="fas fa-check-circle"></i> Ofrecen las mismas funcionalidades.</div>
+                    <div class="advantage-item"><i class="fas fa-check-circle"></i> Acceso directo mediante descarga.</div>
+                    <div class="advantage-item"><i class="fas fa-check-circle"></i> Interfaz de usuario uniforme.</div>
+                    <div class="advantage-item"><i class="fas fa-check-circle"></i> Lenguajes de programación reconocidos.</div>
+                    <div class="advantage-item"><i class="fas fa-check-circle"></i> Lanzamiento más rápido al mercado.</div>
+                </div>
+            </div>
+        </section>
+
+        <div class="page-nav">
+            <a href="t1_s1.html" class="btn-nav btn-prev"><i class="fas fa-arrow-left"></i> Subtema 1: Definición</a>
+            <a href="t1_s3.html" class="btn-nav btn-next">Subtema 3: Herramientas <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </div>
+
+    <footer style="text-align: center; padding: 2rem; font-size: 0.8rem; color: #888;">
+        UNEMI - Computación Móvil
+    </footer>
+
+</body>
+</html>

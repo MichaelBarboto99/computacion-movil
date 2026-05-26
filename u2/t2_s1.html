@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lenguajes de Desarrollo Móvil | Computación Móvil</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="../logo_computacion_movil.svg">
+    <style>
+        :root {
+            --azul-oscuro: #1a2e44;
+            --naranja: #f37021;
+            --gris-fondo: #f8f9fa;
+            --blanco: #ffffff;
+            --texto: #444;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            background-color: var(--gris-fondo);
+            color: var(--texto);
+        }
+
+        nav {
+            background-color: var(--azul-oscuro);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a { color: white; text-decoration: none; font-weight: bold; }
+
+        .container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            background: var(--blanco);
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.05);
+        }
+
+        .header-tema {
+            border-bottom: 3px solid var(--naranja);
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+        }
+
+        /* Estilo de Fichas de Lenguajes */
+        .language-card {
+            background: white;
+            border-radius: 12px;
+            border: 1px solid #eee;
+            margin-bottom: 2rem;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s;
+        }
+
+        .language-card:hover {
+            transform: scale(1.01);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        .lang-header {
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: white;
+        }
+
+        .lang-header i { font-size: 2.5rem; }
+        .lang-header h2 { margin: 0; font-size: 1.8rem; }
+
+        /* Colores por lenguaje */
+        .java-bg { background: #5382a1; }
+        .kotlin-bg { background: #7F52FF; }
+        .python-bg { background: #3776ab; }
+        .js-bg { background: #f7df1e; color: #333 !important; }
+        .swift-bg { background: #f05138; }
+
+        .lang-body { padding: 2rem; }
+        
+        .advantage-tag {
+            background: #eef2f7;
+            color: var(--azul-oscuro);
+            padding: 5px 12px;
+            border-radius: 5px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            margin-right: 5px;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .pro-list {
+            margin-top: 1rem;
+            padding-left: 20px;
+        }
+
+        .page-nav {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #eee;
+        }
+
+        .btn-nav { padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: bold; }
+        .btn-prev { background: #eee; color: #555; }
+        .btn-next { background: var(--azul-oscuro); color: white; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="../index.html"><i class="fas fa-home"></i> Inicio</a>
+        <span style="color: white;">Unidad 2 > Tema 2</span>
+    </nav>
+
+    <div class="container">
+        <div class="header-tema">
+            <span style="color: var(--naranja); font-weight: bold;">TEMA 2 - SUBTEMA 1</span>
+            <h1>Lenguajes para desarrollo de app móviles</h1>
+        </div>
+
+        <p>Un lenguaje de programación es el sistema formal que permite al programador dar instrucciones precisas a un smartphone. Según el compendio, estos son los pilares del desarrollo móvil actual:</p>
+
+        <!-- JAVA -->
+        <div class="language-card">
+            <div class="lang-header java-bg">
+                <i class="fab fa-java"></i>
+                <h2>Java</h2>
+            </div>
+            <div class="lang-body">
+                <span class="advantage-tag">Base de Android</span>
+                <span class="advantage-tag">Multiplataforma (JRE)</span>
+                <p>Es un lenguaje versátil y muy utilizado desde 1995. Su lema es <strong>"Escribir una vez, ejecutar en cualquier lugar"</strong>.</p>
+                <ul class="pro-list">
+                    <li>Programación orientada a objetos (POO) que facilita la reutilización.</li>
+                    <li>Extenso ecosistema de herramientas y bibliotecas (APIs).</li>
+                    <li>Utilizado en apps como <strong>Twitter, Netflix y Uber</strong>.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- KOTLIN -->
+        <div class="language-card">
+            <div class="lang-header kotlin-bg">
+                <i class="fas fa-code"></i>
+                <h2>Kotlin</h2>
+            </div>
+            <div class="lang-body">
+                <span class="advantage-tag">Recomendado por Google</span>
+                <span class="advantage-tag">Código Moderno</span>
+                <p>Presentado en 2011 por JetBrains, se ha convertido en el lenguaje preferido para programar en la plataforma <strong>Android</strong>.</p>
+                <ul class="pro-list">
+                    <li>Sintaxis clara y fácil de entender (curva de aprendizaje suave).</li>
+                    <li>Reduce drásticamente las líneas de código frente a Java.</li>
+                    <li>Código abierto y altamente escalable para proyectos grandes.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- PYTHON -->
+        <div class="language-card">
+            <div class="lang-header python-bg">
+                <i class="fab fa-python"></i>
+                <h2>Python</h2>
+            </div>
+            <div class="lang-body">
+                <span class="advantage-tag">Código Conciso</span>
+                <span class="advantage-tag">IA / Machine Learning</span>
+                <p>Famoso por su simplicidad. En el desarrollo móvil se apoya en frameworks como <strong>Kivy</strong> para crear apps multiplataforma.</p>
+                <ul class="pro-list">
+                    <li>Propósito general y fácil de aprender para principiantes.</li>
+                    <li>Permite la creación rápida de prototipos.</li>
+                    <li>Bibliotecas extensas para conexión con APIs externas.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- JAVASCRIPT -->
+        <div class="language-card">
+            <div class="lang-header js-bg">
+                <i class="fab fa-js"></i>
+                <h2>JavaScript</h2>
+            </div>
+            <div class="lang-body">
+                <span class="advantage-tag">Ideal Multiplataforma</span>
+                <span class="advantage-tag">Asíncrono</span>
+                <p>Es el lenguaje de scripting más popular de la web y el corazón de frameworks como <strong>React Native</strong>.</p>
+                <ul class="pro-list">
+                    <li>Permite ejecutar múltiples tareas simultáneamente sin bloquear la interfaz.</li>
+                    <li>Utiliza el formato <strong>JSON</strong> para el intercambio eficiente de datos.</li>
+                    <li>Se conecta fácilmente a bases de datos y APIs dinámicas.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- SWIFT -->
+        <div class="language-card">
+            <div class="lang-header swift-bg">
+                <i class="fab fa-swift"></i>
+                <h2>Swift</h2>
+            </div>
+            <div class="lang-body">
+                <span class="advantage-tag">Estándar iOS / macOS</span>
+                <span class="advantage-tag">Seguridad Avanzada</span>
+                <p>Creado por <strong>Apple</strong> para mejorar y reemplazar a Objective-C. Es el lenguaje ideal para el ecosistema Apple.</p>
+                <ul class="pro-list">
+                    <li>Diseñado para reducir al mínimo la posibilidad de errores de escritura.</li>
+                    <li>Velocidad de desarrollo superior a C o C++.</li>
+                    <li>Evolución continua para aprovechar las últimas tecnologías de iPhone y iPad.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="page-nav">
+            <a href="t1_s4.html" class="btn-nav btn-prev"><i class="fas fa-arrow-left"></i> Tema 1: Ejemplos</a>
+            <a href="t2_s2.html" class="btn-nav btn-next">Subtema 2: Sistemas Operativos <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </div>
+
+    <footer style="text-align: center; padding: 2rem; font-size: 0.8rem; color: #888;">
+        UNEMI - Computación Móvil
+    </footer>
+
+</body>
+</html>

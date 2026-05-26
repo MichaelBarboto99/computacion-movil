@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desarrollo en Node.js | Computación Móvil</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="../logo_computacion_movil.svg">
+    <style>
+        :root {
+            --azul-oscuro: #1a2e44;
+            --naranja: #f37021;
+            --nodejs-green: #68a063;
+            --gris-fondo: #f8f9fa;
+            --blanco: #ffffff;
+            --code-bg: #2d2d2d;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            background-color: var(--gris-fondo);
+            color: #444;
+        }
+
+        nav {
+            background-color: var(--azul-oscuro);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a { color: white; text-decoration: none; font-weight: bold; }
+
+        .container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            background: var(--blanco);
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.05);
+        }
+
+        .header-tema {
+            border-bottom: 3px solid var(--nodejs-green);
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+        }
+
+        /* Bloque de arquitectura */
+        .arch-box {
+            background: #eef7ee;
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-left: 5px solid var(--nodejs-green);
+        }
+
+        .engine-badge {
+            background: var(--nodejs-green);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-family: monospace;
+        }
+
+        /* Grid de Casos de Uso */
+        .use-cases {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+            margin: 2rem 0;
+        }
+
+        .case-card {
+            background: white;
+            border: 1px solid #ddd;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .case-card i { color: var(--nodejs-green); font-size: 1.5rem; margin-bottom: 8px; }
+
+        /* Consola y Código */
+        .terminal {
+            background: var(--code-bg);
+            color: #fff;
+            padding: 1.2rem;
+            border-radius: 6px;
+            font-family: 'Consolas', monospace;
+            margin: 1rem 0;
+            position: relative;
+        }
+
+        .terminal::before {
+            content: "Terminal";
+            position: absolute;
+            top: -10px;
+            left: 10px;
+            background: #444;
+            padding: 2px 10px;
+            font-size: 0.7rem;
+            border-radius: 4px;
+        }
+
+        .terminal span { color: var(--nodejs-green); }
+
+        .page-nav {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #eee;
+        }
+
+        .btn-nav { padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: bold; }
+        .btn-prev { background: #eee; color: #555; }
+        .btn-next { background: var(--azul-oscuro); color: white; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="../index.html"><i class="fas fa-home"></i> Inicio</a>
+        <span style="color: white;">Unidad 4 > Desarrollo de Servicios</span>
+    </nav>
+
+    <div class="container">
+        <div class="header-tema">
+            <span style="color: var(--nodejs-green); font-weight: bold;">TEMA 1 - SUBTEMA 3</span>
+            <h1>Desarrollo de Servicios en Nodejs</h1>
+        </div>
+
+        <section>
+            <p><strong>Node.js</strong> es un entorno de ejecución de código abierto y multiplataforma que permite ejecutar JavaScript fuera del navegador. Es ideal para construir aplicaciones de red rápidas y escalables (Pág. 142).</p>
+
+            <div class="arch-box">
+                <h3><i class="fas fa-microchip"></i> El Motor y la Arquitectura</h3>
+                <p>Utiliza el motor <span class="engine-badge">Chrome V8</span> que convierte el código JavaScript a código máquina en tiempo real (JIT). Su principal característica es el uso de un <strong>"Single Threaded Event Loop"</strong>.</p>
+                <ul style="font-size: 0.9rem;">
+                    <li><strong>No bloqueante:</strong> Gestiona múltiples conexiones simultáneamente sin abrir múltiples procesos.</li>
+                    <li><strong>Eficiencia:</strong> Ejecución de hilos asíncronos que garantiza respuestas veloces en el procesamiento de datos.</li>
+                </ul>
+            </div>
+
+            <h2>Casos de Uso Comunes (Pág. 144)</h2>
+            <div class="use-cases">
+                <div class="case-card"><i class="fas fa-comments"></i><br>Chats en tiempo real</div>
+                <div class="case-card"><i class="fas fa-broadcast-tower"></i><br>IoT</div>
+                <div class="case-card"><i class="fas fa-play-circle"></i><br>Streaming de datos</div>
+                <div class="case-card"><i class="fas fa-plug"></i><br>APIs REST</div>
+                <div class="case-card"><i class="fas fa-layer-group"></i><br>SPAs (Single Page Apps)</div>
+            </div>
+
+            <h2>Guía Práctica: Crear un Servicio Web (Págs. 145-147)</h2>
+            <p>Para desarrollar servicios web robustos, el compendio recomienda el framework <strong>Express</strong>.</p>
+            
+            <h3>1. Instalación de Herramientas</h3>
+            <p>Debes ejecutar los siguientes comandos en el directorio de tu proyecto:</p>
+            <div class="terminal">
+                <span>$</span> npm install express<br>
+                <span>$</span> npm install request
+            </div>
+
+            <h3>2. Lógica del Servidor (application.js)</h3>
+            <p>En este archivo definimos los controladores y las rutas. Un ejemplo básico para consumir datos de una API externa (como JSONPlaceholder):</p>
+            <div class="terminal" style="color: #a6e22e; font-size: 0.85rem;">
+                const express = require("express");<br>
+                const app = express();<br><br>
+                app.get('/users', (req, res) => {<br>
+                &nbsp;&nbsp;// Lógica para obtener datos JSON...<br>
+                &nbsp;&nbsp;res.send(data);<br>
+                });<br><br>
+                app.listen(8888, () => console.log('Servidor corriendo...'));
+            </div>
+
+            <h3>3. Ejecución y Prueba</h3>
+            <p>Para poner en marcha el servicio, utiliza el comando:</p>
+            <div class="terminal">
+                <span>$</span> node application.js
+            </div>
+            <p>Luego, abre tu navegador e ingresa a: <code style="color:var(--naranja)">http://localhost:8888/users/</code></p>
+        </section>
+
+        <div class="page-nav">
+            <a href="t1_s2.html" class="btn-nav btn-prev"><i class="fas fa-arrow-left"></i> Subtema 2: Elementos</a>
+            <a href="t1_s4.html" class="btn-nav btn-next">Subtema 4: Escenarios CRUD <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </div>
+
+    <footer style="text-align: center; padding: 2rem; font-size: 0.8rem; color: #888;">
+        UNEMI - Computación Móvil
+    </footer>
+
+</body>
+</html>

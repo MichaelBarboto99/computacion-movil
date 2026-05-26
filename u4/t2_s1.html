@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introducción a Apps Híbridas PWA | Computación Móvil</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="../logo_computacion_movil.svg">
+    <style>
+        :root {
+            --azul-oscuro: #1a2e44;
+            --naranja: #f37021;
+            --gris-fondo: #f8f9fa;
+            --blanco: #ffffff;
+            --web-color: #264de4;
+            --native-color: #3ddc84;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6; margin: 0;
+            background-color: var(--gris-fondo); color: #444;
+        }
+
+        nav {
+            background-color: var(--azul-oscuro); padding: 1rem 2rem;
+            display: flex; justify-content: space-between; align-items: center;
+            position: sticky; top: 0; z-index: 1000;
+        }
+
+        nav a { color: white; text-decoration: none; font-weight: bold; }
+
+        .container {
+            max-width: 1000px; margin: 2rem auto;
+            background: var(--blanco); padding: 3rem;
+            border-radius: 10px; box-shadow: 0 0 20px rgba(0,0,0,0.05);
+        }
+
+        .header-tema {
+            border-bottom: 3px solid var(--naranja);
+            margin-bottom: 2rem; padding-bottom: 1rem;
+        }
+
+        /* Diagrama de Fusión */
+        .fusion-container {
+            display: flex; align-items: center; justify-content: center;
+            gap: 20px; margin: 3rem 0; text-align: center;
+        }
+
+        .fusion-circle {
+            width: 150px; height: 150px; border-radius: 50%;
+            display: flex; flex-direction: column; justify-content: center;
+            align-items: center; color: white; font-weight: bold;
+        }
+
+        /* Ventajas y Desventajas Grid */
+        .pros-cons-grid {
+            display: grid; grid-template-columns: 1fr 1fr;
+            gap: 25px; margin: 2rem 0;
+        }
+
+        .pc-card { padding: 1.5rem; border-radius: 10px; }
+        .pros-box { background: #f0fff4; border-top: 5px solid #38a169; }
+        .cons-box { background: #fff5f5; border-top: 5px solid #e53e3e; }
+
+        .pc-card h3 { margin-top: 0; display: flex; align-items: center; gap: 10px; }
+
+        /* Factores de Selección */
+        .factors-section {
+            background: #eef2f7; padding: 2rem; border-radius: 10px; margin-top: 3rem;
+        }
+
+        .factor-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px; margin-top: 1rem;
+        }
+
+        .factor-item {
+            background: white; padding: 1rem; border-radius: 6px;
+            font-size: 0.85rem; border: 1px solid #ddd;
+        }
+
+        .factor-item strong { color: var(--azul-oscuro); display: block; margin-bottom: 5px; }
+
+        .page-nav {
+            display: flex; justify-content: space-between;
+            margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #eee;
+        }
+
+        .btn-nav { padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: bold; }
+        .btn-prev { background: #eee; color: #555; }
+        .btn-next { background: var(--azul-oscuro); color: white; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="../index.html"><i class="fas fa-home"></i> Inicio</a>
+        <span style="color: white;">Unidad 4 > Tema 2: Apps Híbridas</span>
+    </nav>
+
+    <div class="container">
+        <div class="header-tema">
+            <span style="color: var(--naranja); font-weight: bold;">TEMA 2 - SUBTEMA 1</span>
+            <h1>Introducción a Aplicaciones Híbridas (PWA)</h1>
+        </div>
+
+        <section>
+            <p>Las aplicaciones híbridas combinan lo mejor de dos mundos: la versatilidad de las tecnologías web y la capacidad de acceso al hardware de los dispositivos móviles (Pág. 161).</p>
+
+            <div class="fusion-container">
+                <div class="fusion-circle" style="background-color: var(--web-color);">
+                    <i class="fas fa-globe fa-2x"></i><br>Web (HTML5)
+                </div>
+                <i class="fas fa-plus fa-2x" style="color: #ccc;"></i>
+                <div class="fusion-circle" style="background-color: var(--native-color);">
+                    <i class="fas fa-mobile-alt fa-2x"></i><br>Nativo (API)
+                </div>
+                <i class="fas fa-equals fa-2x" style="color: #ccc;"></i>
+                <div class="fusion-circle" style="background-color: var(--naranja);">
+                    <i class="fas fa-bolt fa-2x"></i><br>HÍBRIDA
+                </div>
+            </div>
+
+            <p><strong>Definición técnica:</strong> Se ejecutan dentro de un contenedor nativo que utiliza un componente llamado <strong>WebView</strong> para mostrar la interfaz creada con HTML5, CSS y JavaScript (Pág. 162).</p>
+
+            <div class="pros-cons-grid">
+                <!-- VENTAJAS -->
+                <div class="pc-card pros-box">
+                    <h3><i class="fas fa-check-circle" style="color:#38a169"></i> Ventajas</h3>
+                    <ul style="font-size: 0.9rem; padding-left: 20px;">
+                        <li><strong>Mayor alcance:</strong> Disponibles en Android e iOS con un solo código (Pág. 163).</li>
+                        <li><strong>Bajo costo:</strong> Reduce horas facturables al no duplicar esfuerzos.</li>
+                        <li><strong>Mantenimiento sencillo:</strong> Los parches se aplican a todas las plataformas a la vez.</li>
+                        <li><strong>Acceso a hardware:</strong> Pueden usar cámara y GPS mediante plugins.</li>
+                    </ul>
+                </div>
+                <!-- DESVENTAJAS -->
+                <div class="pc-card cons-box">
+                    <h3><i class="fas fa-times-circle" style="color:#e53e3e"></i> Desventajas</h3>
+                    <ul style="font-size: 0.9rem; padding-left: 20px;">
+                        <li><strong>Rendimiento lento:</strong> Dependen de la calidad del WebView del sistema (Pág. 164).</li>
+                        <li><strong>Inconsistencias UI/UX:</strong> Es difícil lograr que se vean idénticas en todos los SO.</li>
+                        <li><strong>Complejidad de pruebas:</strong> Partes del código nativo requieren tests específicos.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="factors-section">
+                <h2>¿Cómo elegir el tipo de aplicación? (Pág. 165)</h2>
+                <p>El compendio sugiere analizar estos 6 factores clave antes de iniciar el desarrollo:</p>
+                <div class="factor-grid">
+                    <div class="factor-item"><strong>Público Objetivo:</strong> Consumidores (Híbrida/Nativa) vs Uso interno (Web).</div>
+                    <div class="factor-item"><strong>Plataforma:</strong> ¿Necesitas presencia en todas las tiendas rápidamente?</div>
+                    <div class="factor-item"><strong>Función Principal:</strong> ¿Requiere acceso profundo a sensores específicos?</div>
+                    <div class="factor-item"><strong>Recursos:</strong> Habilidades del equipo y presupuesto disponible.</div>
+                    <div class="factor-item"><strong>Mantenimiento:</strong> Frecuencia de actualizaciones necesaria.</div>
+                    <div class="factor-item"><strong>Costo:</strong> Las nativas son las más caras de producir.</div>
+                </div>
+            </div>
+        </section>
+
+        <div class="page-nav">
+            <a href="t1_s4.html" class="btn-nav btn-prev"><i class="fas fa-arrow-left"></i> Tema 1: Escenarios CRUD</a>
+            <a href="t2_s2.html" class="btn-nav btn-next">Subtema 2: Diseño Responsive <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </div>
+
+    <footer style="text-align: center; padding: 2rem; font-size: 0.8rem; color: #888;">
+        UNEMI - Computación Móvil
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introducción a Flutter | Computación Móvil</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="../logo_computacion_movil.svg">
+    <style>
+        :root {
+            --azul-oscuro: #1a2e44;
+            --naranja: #f37021;
+            --flutter-sky: #02569b;
+            --flutter-blue: #050b18;
+            --gris-fondo: #f8f9fa;
+            --blanco: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            background-color: var(--gris-fondo);
+            color: #444;
+        }
+
+        nav {
+            background-color: var(--azul-oscuro);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a { color: white; text-decoration: none; font-weight: bold; }
+
+        .container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            background: var(--blanco);
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.05);
+        }
+
+        .header-tema {
+            border-bottom: 3px solid var(--flutter-sky);
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .hero-flutter {
+            background: linear-gradient(135deg, var(--flutter-sky), var(--flutter-blue));
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        /* Características clave */
+        .grid-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 2rem 0;
+        }
+
+        .feature-card {
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: 1px solid #e1e4e8;
+            background: #fff;
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover { transform: translateY(-5px); border-color: var(--flutter-sky); }
+
+        .feature-card i { color: var(--flutter-sky); font-size: 1.5rem; margin-bottom: 10px; }
+
+        .feature-card h3 { margin: 0 0 10px 0; color: var(--azul-oscuro); }
+
+        /* Widgets Section */
+        .widget-philosophy {
+            background: #eef2f7;
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .widget-types {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 1.5rem;
+        }
+
+        .widget-box {
+            padding: 1.5rem;
+            border-radius: 8px;
+            color: white;
+        }
+
+        .stateless { background-color: #546e7a; }
+        .stateful { background-color: var(--naranja); }
+
+        .code-pill {
+            background: #333;
+            color: #61dafb;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+
+        .page-nav {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #eee;
+        }
+
+        .btn-nav { padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: bold; }
+        .btn-prev { background: #eee; color: #555; }
+        .btn-next { background: var(--azul-oscuro); color: white; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="../index.html"><i class="fas fa-home"></i> Inicio</a>
+        <span style="color: white;">Unidad 3 > Frameworks Móviles</span>
+    </nav>
+
+    <div class="container">
+        <div class="header-tema">
+            <div>
+                <span style="color: var(--flutter-sky); font-weight: bold;">TEMA 2 - SUBTEMA 1</span>
+                <h1 style="margin:0; color: var(--azul-oscuro);">Introducción a Flutter</h1>
+            </div>
+            <i class="fab fa-google fa-2x" style="color: #4285F4;"></i>
+        </div>
+
+        <section>
+            <div class="hero-flutter">
+                <i class="fas fa-rocket fa-3x"></i>
+                <div>
+                    <h2 style="margin:0;">¿Qué es Flutter?</h2>
+                    <p style="margin:5px 0 0 0;">Es el kit de herramientas de interfaz de usuario de Google para crear aplicaciones compiladas de forma nativa para móvil, web y escritorio desde una <strong>única base de código</strong>.</p>
+                </div>
+            </div>
+
+            <p>Lanzado en 2018, Flutter utiliza el lenguaje de programación <span class="code-pill">Dart</span>. Su principal valor radica en la capacidad de desarrollar para iOS y Android simultáneamente sin comprometer el rendimiento (Pág. 114).</p>
+
+            <h2>Características de Flutter</h2>
+            <div class="grid-features">
+                <div class="feature-card">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Desarrollo Rápido</h3>
+                    <p>La función <strong>Hot Reload</strong> permite ver cambios en el código en menos de un segundo sin perder el estado de la app (Pág. 115).</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-microchip"></i>
+                    <h3>Rendimiento Nativo</h3>
+                    <p>Utiliza el motor gráfico <strong>Skia</strong> para renderizar su propia UI, asegurando fluidez total en cualquier dispositivo (Pág. 115).</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-paint-roller"></i>
+                    <h3>UI Flexible</h3>
+                    <p>Arquitectura en capas que permite una personalización total y diseños expresivos mediante un catálogo extenso de widgets.</p>
+                </div>
+            </div>
+
+            <div class="widget-philosophy">
+                <h2>"Todo es un Widget"</h2>
+                <p>En Flutter, la interfaz se construye ensamblando piezas llamadas widgets, como si fueran bloques de LEGO (Pág. 116). Existen dos tipos fundamentales (Pág. 117):</p>
+                
+                <div class="widget-types">
+                    <div class="widget-box stateless">
+                        <h3>StatelessWidget</h3>
+                        <p><strong>Sin estado:</strong> No cambian con el tiempo. Ejemplos: un icono, una etiqueta de texto o un botón simple.</p>
+                    </div>
+                    <div class="widget-box stateful">
+                        <h3>StatefulWidget</h3>
+                        <p><strong>Con estado:</strong> Son dinámicos y cambian en respuesta a eventos o datos. Ejemplos: Checkbox, Slider o campos de texto.</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Componentes de Flutter (Pág. 115)</h3>
+            <ul>
+                <li><strong>SDK:</strong> Colección de herramientas para compilar código para iOS y Android.</li>
+                <li><strong>Framework:</strong> Biblioteca de UI basada en widgets reutilizables (botones, entradas, etc.).</li>
+            </ul>
+        </section>
+
+        <div class="page-nav">
+            <a href="t1_s4.html" class="btn-nav btn-prev"><i class="fas fa-arrow-left"></i> Tema 1: Componentes</a>
+            <a href="t2_s2.html" class="btn-nav btn-next">Subtema 2: Estilos y Animaciones <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </div>
+
+    <footer style="text-align: center; padding: 2rem; font-size: 0.8rem; color: #888;">
+        UNEMI - Computación Móvil | Basado en el compendio oficial
+    </footer>
+
+</body>
+</html>

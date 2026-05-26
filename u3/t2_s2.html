@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estilos y Animaciones en Flutter | Computación Móvil</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="../logo_computacion_movil.svg">
+    <style>
+        :root {
+            --azul-oscuro: #1a2e44;
+            --naranja: #f37021;
+            --flutter-sky: #02569b;
+            --gris-fondo: #f8f9fa;
+            --blanco: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            background-color: var(--gris-fondo);
+            color: #444;
+        }
+
+        nav {
+            background-color: var(--azul-oscuro);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a { color: white; text-decoration: none; font-weight: bold; }
+
+        .container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            background: var(--blanco);
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.05);
+        }
+
+        .header-tema {
+            border-bottom: 3px solid var(--naranja);
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+        }
+
+        /* Bloques de Diseño Visual */
+        .design-principles {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 2rem 0;
+        }
+
+        .design-card {
+            background: #f1f3f5;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 5px solid var(--flutter-sky);
+        }
+
+        /* Widgets de Estilo */
+        .style-widget {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .style-widget h3 {
+            margin-top: 0;
+            color: var(--flutter-sky);
+            font-family: monospace;
+        }
+
+        .code-snippet {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 1rem;
+            border-radius: 5px;
+            font-size: 0.85rem;
+            overflow-x: auto;
+        }
+
+        /* Sección de Animaciones */
+        .animation-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 1.5rem;
+        }
+
+        .anim-box {
+            padding: 1.5rem;
+            border-radius: 10px;
+            color: white;
+        }
+
+        .anim-implicit { background-color: #455a64; }
+        .anim-explicit { background-color: var(--naranja); }
+
+        .page-nav {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #eee;
+        }
+
+        .btn-nav { padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: bold; }
+        .btn-prev { background: #eee; color: #555; }
+        .btn-next { background: var(--azul-oscuro); color: white; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="../index.html"><i class="fas fa-home"></i> Inicio</a>
+        <span style="color: white;">Unidad 3 > Estética Flutter</span>
+    </nav>
+
+    <div class="container">
+        <div class="header-tema">
+            <span style="color: var(--naranja); font-weight: bold;">TEMA 2 - SUBTEMA 2</span>
+            <h1>Interacción, Estilos y Animaciones</h1>
+        </div>
+
+        <section>
+            <h2>1. El Arte de la Interacción (Pág. 118)</h2>
+            <p>Los usuarios modernos esperan experiencias fluidas. Para lograrlo en Flutter, debemos planificar el diseño basándonos en una jerarquía visual clara y un sistema de cuadrícula (filas y columnas).</p>
+            
+            <div class="design-principles">
+                <div class="design-card">
+                    <h3><i class="fas fa-palette"></i> Color y Tipografía</h3>
+                    <p>Elegir la colección visual adecuada es fundamental. Los colores deben evocar emociones y la tipografía debe dirigir la atención del usuario hacia lo importante.</p>
+                </div>
+                <div class="design-card">
+                    <h3><i class="fas fa-th"></i> Diseño Receptivo</h3>
+                    <p>Usar widgets como <strong>Row</strong>, <strong>Column</strong> y <strong>Container</strong> junto con <strong>Flexible</strong> y <strong>Expanded</strong> para que la app se adapte a cualquier pantalla (Pág. 119).</p>
+                </div>
+            </div>
+
+            <h2>2. Widgets de Estilo Esenciales (Pág. 120-122)</h2>
+            
+            <div class="style-widget">
+                <h3>Theme & ThemeData</h3>
+                <p>Permite gestionar el tema global (colores y fuentes) de toda la aplicación desde <code>MaterialApp</code>.</p>
+                <div class="code-snippet">
+                    theme: ThemeData(<br>
+                    &nbsp;&nbsp;colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),<br>
+                    &nbsp;&nbsp;useMaterial3: true,<br>
+                    )
+                </div>
+            </div>
+
+            <div class="style-widget">
+                <h3>Padding & MediaQuery</h3>
+                <p><strong>Padding:</strong> Agrega espacio alrededor de un widget hijo para un diseño equilibrado.</p>
+                <p><strong>MediaQuery:</strong> Permite obtener el tamaño exacto de la pantalla (<code>sizeOf</code>) o el margen de seguridad (<code>paddingOf</code>) para diseños adaptativos.</p>
+            </div>
+
+            <h2>3. El Movimiento: Animaciones (Pág. 122)</h2>
+            <p>Flutter clasifica las animaciones en dos grandes categorías según su complejidad:</p>
+
+            <div class="animation-grid">
+                <!-- Implícitas -->
+                <div class="anim-box anim-implicit">
+                    <h3><i class="fas fa-magic"></i> Implícitas</h3>
+                    <p>Se basan en definir un valor inicial y uno final. Flutter se encarga de la <strong>interpolación</strong> (transición suave).</p>
+                    <p><small>Ideal para: Cambios simples de color, tamaño o opacidad.</small></p>
+                </div>
+
+                <!-- Explícitas -->
+                <div class="anim-box anim-explicit">
+                    <h3><i class="fas fa-hand-pointer"></i> Explícitas</h3>
+                    <p>Requieren un <strong>AnimationController</strong>. El desarrollador tiene control total sobre cuándo y cómo ocurre el movimiento.</p>
+                    <p><small>Necesario si: La animación se repite en ciclo o hay múltiples widgets coordinados.</small></p>
+                </div>
+            </div>
+        </section>
+
+        <div class="page-nav">
+            <a href="t2_s1.html" class="btn-nav btn-prev"><i class="fas fa-arrow-left"></i> Subtema 1: Intro a Flutter</a>
+            <a href="t2_s3.html" class="btn-nav btn-next">Subtema 3: Gestión de Estado <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </div>
+
+    <footer style="text-align: center; padding: 2rem; font-size: 0.8rem; color: #888;">
+        UNEMI - Computación Móvil
+    </footer>
+
+</body>
+</html>

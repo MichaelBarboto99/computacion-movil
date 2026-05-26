@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entornos de Desarrollo (IDE) | Computación Móvil</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="../logo_computacion_movil.svg">
+    <style>
+        :root {
+            --azul-oscuro: #1a2e44;
+            --naranja: #f37021;
+            --android-studio: #3fb57d;
+            --xcode: #157aff;
+            --gris-fondo: #f8f9fa;
+            --blanco: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            background-color: var(--gris-fondo);
+            color: #444;
+        }
+
+        nav {
+            background-color: var(--azul-oscuro);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a { color: white; text-decoration: none; font-weight: bold; }
+
+        .container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            background: var(--blanco);
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.05);
+        }
+
+        .header-tema {
+            border-bottom: 3px solid var(--naranja);
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+        }
+
+        .ide-definition {
+            background: #eef2f7;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2.5rem;
+        }
+
+        /* Estilo de IDE Cards */
+        .ide-card {
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            margin-bottom: 3rem;
+            overflow: hidden;
+        }
+
+        .ide-header {
+            padding: 1.5rem 2rem;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .ide-header i { font-size: 2.5rem; }
+        .ide-header h2 { margin: 0; }
+
+        .ide-content { padding: 2rem; }
+
+        .pros-cons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 1.5rem;
+        }
+
+        .box-title {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+        }
+
+        .pros-list, .cons-list {
+            list-style: none;
+            padding: 0;
+            font-size: 0.9rem;
+        }
+
+        .pros-list li::before { content: "✓ "; color: #28a745; font-weight: bold; }
+        .cons-list li::before { content: "✗ "; color: #dc3545; font-weight: bold; }
+
+        .warning-note {
+            background: #fff3cd;
+            color: #856404;
+            padding: 1rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+        }
+
+        .page-nav {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #eee;
+        }
+
+        .btn-nav { padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: bold; }
+        .btn-prev { background: #eee; color: #555; }
+        .btn-home { background: var(--naranja); color: white; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="../index.html"><i class="fas fa-home"></i> Inicio</a>
+        <span style="color: white;">Unidad 2 > Tema 2</span>
+    </nav>
+
+    <div class="container">
+        <div class="header-tema">
+            <span style="color: var(--naranja); font-weight: bold;">TEMA 2 - SUBTEMA 4</span>
+            <h1>Entornos de desarrollo móvil</h1>
+        </div>
+
+        <section>
+            <div class="ide-definition">
+                <p><strong>¿Qué es un IDE?</strong> Es un <em>Integrated Development Environment</em> (Entorno de Desarrollo Integrado). Son herramientas completas que incluyen editor de código, compilador, depurador y funciones como el autocompletado inteligente (IntelliSense) para aumentar la productividad del programador.</p>
+            </div>
+
+            <!-- ANDROID STUDIO -->
+            <div class="ide-card">
+                <div class="ide-header" style="background-color: var(--android-studio);">
+                    <i class="fab fa-android"></i>
+                    <h2>Android Studio</h2>
+                </div>
+                <div class="ide-content">
+                    <p>Es el IDE oficial de Android, construido sobre la base de <strong>IntelliJ IDEA</strong>. Ofrece un sistema de compilación flexible (Gradle) y herramientas para detectar problemas de compatibilidad o usabilidad.</p>
+                    
+                    <div class="pros-cons">
+                        <div>
+                            <span class="box-title">Ventajas</span>
+                            <ul class="pros-list">
+                                <li>Compilaciones muy rápidas.</li>
+                                <li>Renderizado de layouts en tiempo real.</li>
+                                <li>Emulador potente para verificar el estado al instante.</li>
+                                <li>Interfaz simple e intuitiva para principiantes.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <span class="box-title">Desventajas</span>
+                            <ul class="cons-list">
+                                <li>Alto consumo de recursos (RAM) y batería.</li>
+                                <li>Requiere equipos potentes y espacio en disco.</li>
+                                <li>Falta de soporte nativo para NDK (requiere plugin).</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- XCODE -->
+            <div class="ide-card">
+                <div class="ide-header" style="background-color: var(--xcode);">
+                    <i class="fab fa-apple"></i>
+                    <h2>Xcode</h2>
+                </div>
+                <div class="ide-content">
+                    <p>Herramienta fundamental para el ecosistema Apple (iOS, macOS, watchOS, tvOS, etc.). Es un conjunto completo que permite crear, mantener, compilar y depurar proyectos de forma profesional.</p>
+                    
+                    <div class="pros-cons">
+                        <div>
+                            <span class="box-title">Funciones Destacadas</span>
+                            <ul class="pros-list">
+                                <li>Editor avanzado para <strong>Swift</strong> y Objective-C.</li>
+                                <li>Visualización en tiempo real del código escrito.</li>
+                                <li>Simuladores para probar en múltiples versiones de iPhone virtuales.</li>
+                                <li>Integración estrecha con SDKs y APIs oficiales de Apple.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <span class="box-title">Herramientas Pro</span>
+                            <p style="font-size: 0.9rem;"><strong>Instruments:</strong> Permite medir el rendimiento de las aplicaciones y detectar posibles "cuellos de botella" en el código.</p>
+                        </div>
+                    </div>
+
+                    <div class="warning-note">
+                        <i class="fas fa-info-circle"></i> Apple está promoviendo actualmente el uso exclusivo de <strong>Swift</strong> para mejorar la eficiencia de las aplicaciones.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="page-nav">
+            <a href="t2_s3.html" class="btn-nav btn-prev"><i class="fas fa-arrow-left"></i> Subtema 3: Plataformas</a>
+            <a href="../index.html" class="btn-nav btn-home">Finalizar Unidad 2 <i class="fas fa-check-double"></i></a>
+        </div>
+    </div>
+
+    <footer style="text-align: center; padding: 2rem; font-size: 0.8rem; color: #888;">
+        UNEMI - Computación Móvil
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Características de una App Móvil | Computación Móvil</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="../logo_computacion_movil.svg">
+    <style>
+        :root {
+            --azul-oscuro: #1a2e44;
+            --naranja: #f37021;
+            --gris-fondo: #f8f9fa;
+            --blanco: #ffffff;
+            --texto: #444;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            background-color: var(--gris-fondo);
+            color: var(--texto);
+        }
+
+        nav {
+            background-color: var(--azul-oscuro);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a { color: white; text-decoration: none; font-weight: bold; }
+
+        .container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            background: var(--blanco);
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.05);
+        }
+
+        .header-tema {
+            border-bottom: 3px solid var(--naranja);
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+        }
+
+        h1 { color: var(--azul-oscuro); margin: 0; }
+        
+        /* Grid de Características */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 2rem;
+        }
+
+        .feature-card {
+            border: 1px solid #eee;
+            padding: 1.5rem;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+
+        .feature-card:hover {
+            border-color: var(--naranja);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .feature-card i {
+            color: var(--naranja);
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .feature-card h3 {
+            color: var(--azul-oscuro);
+            margin-top: 0;
+            font-size: 1.1rem;
+        }
+
+        .highlight-box {
+            background-color: #fff4e6;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-left: 5px solid var(--naranja);
+        }
+
+        .page-nav {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #eee;
+        }
+
+        .btn-nav {
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .btn-prev { background: #eee; color: #555; }
+        .btn-next { background: var(--azul-oscuro); color: white; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="../index.html"><i class="fas fa-home"></i> Inicio</a>
+        <span style="color: white;">Unidad 1 > Tema 1</span>
+    </nav>
+
+    <div class="container">
+        <div class="header-tema">
+            <span style="color: var(--naranja); font-weight: bold;">SUBTEMA 2</span>
+            <h1>Características de una app móvil</h1>
+        </div>
+
+        <p>Para que una aplicación móvil sea exitosa y retenida por los usuarios, debe cumplir con una serie de estándares de calidad y funcionalidad:</p>
+
+        <div class="features-grid">
+            <!-- 1. Interfaz de Usuario -->
+            <div class="feature-card">
+                <i class="fas fa-paint-brush"></i>
+                <h3>Interfaz de Usuario (UI) Bien Diseñada</h3>
+                <p>Debe ser intuitiva y atractiva. Un diseño excelente simplifica la navegación y se adapta a pantallas táctiles pequeñas, eliminando funciones no esenciales.</p>
+            </div>
+
+            <!-- 2. Tiempo de Carga -->
+            <div class="feature-card">
+                <i class="fas fa-bolt"></i>
+                <h3>Tiempo de Carga Rápido</h3>
+                <p>Una app no debería tardar más de <strong>5 segundos</strong> en cargarse; lo ideal son <strong>2 segundos</strong>. La lentitud es la principal causa de eliminación de apps.</p>
+            </div>
+
+            <!-- 3. Soporte al Usuario -->
+            <div class="feature-card">
+                <i class="fas fa-headset"></i>
+                <h3>Excelente Soporte</h3>
+                <p>Incluir herramientas de comunicación como chat en vivo, chatbots basados en IA o secciones de preguntas frecuentes (FAQ).</p>
+            </div>
+
+            <!-- 4. Integraciones -->
+            <div class="feature-card">
+                <i class="fas fa-link"></i>
+                <h3>Integraciones Incorporadas</h3>
+                <p>Capacidad de enlazar datos con otras plataformas empresariales para evitar la duplicación de información y mejorar la toma de decisiones.</p>
+            </div>
+
+            <!-- 5. Actualizaciones -->
+            <div class="feature-card">
+                <i class="fas fa-sync-alt"></i>
+                <h3>Actualizaciones Periódicas</h3>
+                <p>Mantenimiento constante para corregir errores, añadir funciones y asegurar la compatibilidad con las nuevas versiones del sistema operativo.</p>
+            </div>
+
+            <!-- 6. Modo Offline -->
+            <div class="feature-card">
+                <i class="fas fa-plane-slash"></i>
+                <h3>Funcionamiento Offline</h3>
+                <p>Permitir que ciertas funciones o contenidos estén disponibles sin conexión a Internet, anticipándose a situaciones de falta de red.</p>
+            </div>
+        </div>
+
+        <!-- 7. Protección de Datos (Destacado) -->
+        <div class="highlight-box">
+            <h3><i class="fas fa-shield-alt"></i> Protección Sólida de Datos</h3>
+            <p>La seguridad no es una ventaja, es una <strong>necesidad esencial</strong>. Para proteger la información confidencial se debe:</p>
+            <ul>
+                <li>Diseñar código seguro y cifrar datos.</li>
+                <li>Utilizar solo APIs autorizadas.</li>
+                <li>Requerir autenticación multifactor (MFA).</li>
+                <li>Realizar pruebas de seguridad periódicas.</li>
+            </ul>
+        </div>
+
+        <div class="page-nav">
+            <a href="t1_s1.html" class="btn-nav btn-prev"><i class="fas fa-arrow-left"></i> Subtema 1: Origen</a>
+            <a href="t1_s3.html" class="btn-nav btn-next">Subtema 3: Tipos de Apps <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </div>
+
+    <footer style="text-align: center; padding: 2rem; font-size: 0.8rem; color: #888;">
+        UNEMI - Computación Móvil
+    </footer>
+
+</body>
+</html>

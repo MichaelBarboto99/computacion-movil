@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plataformas de Desarrollo | Computación Móvil</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="../logo_computacion_movil.svg">
+    <style>
+        :root {
+            --azul-oscuro: #1a2e44;
+            --naranja: #f37021;
+            --gris-fondo: #f8f9fa;
+            --blanco: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            background-color: var(--gris-fondo);
+            color: #444;
+        }
+
+        nav {
+            background-color: var(--azul-oscuro);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a { color: white; text-decoration: none; font-weight: bold; }
+
+        .container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            background: var(--blanco);
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.05);
+        }
+
+        .header-tema {
+            border-bottom: 3px solid var(--naranja);
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+        }
+
+        /* Clasificación por Naturaleza (Pág 75) */
+        .nature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 3rem;
+        }
+
+        .nature-card {
+            padding: 1.5rem;
+            border-radius: 8px;
+            background: #eef2f7;
+            border-top: 4px solid var(--azul-oscuro);
+        }
+
+        .nature-card h3 { margin-top: 0; color: var(--azul-oscuro); }
+        .nature-card ul { padding-left: 20px; font-size: 0.9rem; }
+
+        /* Frameworks Detallados (Pág 76-77) */
+        .tools-list {
+            margin-top: 2rem;
+        }
+
+        .tool-item {
+            display: flex;
+            gap: 20px;
+            padding: 1.5rem;
+            border: 1px solid #eee;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            transition: border-color 0.3s;
+        }
+
+        .tool-item:hover { border-color: var(--naranja); }
+
+        .tool-icon {
+            font-size: 2.5rem;
+            min-width: 60px;
+            color: var(--azul-oscuro);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .tool-info h4 { margin: 0; color: var(--naranja); }
+        .tool-info p { margin: 5px 0 0 0; font-size: 0.95rem; }
+        
+        .lang-tag {
+            font-size: 0.75rem;
+            background: #333;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        .page-nav {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #eee;
+        }
+
+        .btn-nav { padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: bold; }
+        .btn-prev { background: #eee; color: #555; }
+        .btn-next { background: var(--azul-oscuro); color: white; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="../index.html"><i class="fas fa-home"></i> Inicio</a>
+        <span style="color: white;">Unidad 2 > Tema 2</span>
+    </nav>
+
+    <div class="container">
+        <div class="header-tema">
+            <span style="color: var(--naranja); font-weight: bold;">TEMA 2 - SUBTEMA 3</span>
+            <h1>Plataformas de desarrollo móvil</h1>
+        </div>
+
+        <section>
+            <h2>Clasificación según su naturaleza</h2>
+            <div class="nature-grid">
+                <!-- Nativas -->
+                <div class="nature-card">
+                    <h3>Nativas</h3>
+                    <p>Diseñadas específicamente para cada SO:</p>
+                    <ul>
+                        <li><strong>iOS:</strong> Objective-C</li>
+                        <li><strong>Android:</strong> Java</li>
+                        <li><strong>Windows Phone:</strong> .NET</li>
+                    </ul>
+                    <p><small>Ventaja: Aprovechan al máximo el hardware y funcionan offline.</small></p>
+                </div>
+
+                <!-- Híbridas -->
+                <div class="nature-card" style="border-top-color: var(--naranja);">
+                    <h3>Híbridas</h3>
+                    <p>Fusionan características nativas y web.</p>
+                    <ul>
+                        <li>Usan JavaScript, CSS y HTML.</li>
+                        <li>Se adaptan a cualquier SO.</li>
+                        <li>Acceso total a funcionalidades del dispositivo.</li>
+                    </ul>
+                </div>
+
+                <!-- Multiplataforma -->
+                <div class="nature-card">
+                    <h3>Multiplataforma</h3>
+                    <p>La opción más solicitada para reducir gastos.</p>
+                    <ul>
+                        <li>Acelera el proceso de desarrollo.</li>
+                        <li>Ajuste perfecto a diversas plataformas.</li>
+                        <li>Desventaja: No siempre aprovechan el 100% de las funciones del terminal.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2>Herramientas y Frameworks</h2>
+            <div class="tools-list">
+                
+                <!-- Web / HTML5 -->
+                <div class="tool-item">
+                    <div class="tool-icon"><i class="fab fa-html5"></i></div>
+                    <div class="tool-info">
+                        <h4>Web / HTML5 <span class="lang-tag">JS / CSS / HTML</span></h4>
+                        <p>Eliminan la necesidad de un desarrollo específico por cada SO. Se ejecutan directamente desde el navegador móvil integrado.</p>
+                    </div>
+                </div>
+
+                <!-- React Native -->
+                <div class="tool-item">
+                    <div class="tool-icon"><i class="fab fa-react"></i></div>
+                    <div class="tool-info">
+                        <h4>React Native <span class="lang-tag">JavaScript</span></h4>
+                        <p>Permite un rendimiento casi nativo aprovechando un lenguaje ampliamente conocido. Es de las opciones más populares actualmente.</p>
+                    </div>
+                </div>
+
+                <!-- Flutter -->
+                <div class="tool-item">
+                    <div class="tool-icon"><i class="fas fa-rocket"></i></div>
+                    <div class="tool-info">
+                        <h4>Flutter <span class="lang-tag">Dart</span></h4>
+                        <p>Creada por Google. Destaca por su sistema de <strong>widgets</strong> que permite una personalización amplia y sencilla de las interfaces.</p>
+                    </div>
+                </div>
+
+                <!-- Xamarin -->
+                <div class="tool-item">
+                    <div class="tool-icon"><i class="fab fa-microsoft"></i></div>
+                    <div class="tool-info">
+                        <h4>Xamarin <span class="lang-tag">C#</span></h4>
+                        <p>Propiedad de Microsoft. Ideal para compartir código entre plataformas y ahorrar tiempo de desarrollo usando .NET.</p>
+                    </div>
+                </div>
+
+                <!-- Ionic -->
+                <div class="tool-item">
+                    <div class="tool-icon"><i class="fas fa-bolt"></i></div>
+                    <div class="tool-info">
+                        <h4>Ionic <span class="lang-tag">Tecnologías Web</span></h4>
+                        <p>Simplifica la transición de desarrolladores web al móvil. Ofrece un rendimiento robusto y admite plugins nativos.</p>
+                    </div>
+                </div>
+
+                <!-- PhoneGap -->
+                <div class="tool-item">
+                    <div class="tool-icon"><i class="fas fa-mobile-alt"></i></div>
+                    <div class="tool-info">
+                        <h4>PhoneGap (Apache Cordova) <span class="lang-tag">HTML / CSS / JS</span></h4>
+                        <p>Atractivo por su facilidad de uso. Aunque su rendimiento no iguala a las nativas, permite crear apps web muy atractivas.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <div class="page-nav">
+            <a href="t2_s2.html" class="btn-nav btn-prev"><i class="fas fa-arrow-left"></i> Subtema 2: Sistemas Operativos</a>
+            <a href="t2_s4.html" class="btn-nav btn-next">Subtema 4: Entornos (IDE) <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </div>
+
+    <footer style="text-align: center; padding: 2rem; font-size: 0.8rem; color: #888;">
+        UNEMI - Computación Móvil
+    </footer>
+
+</body>
+</html>

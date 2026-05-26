@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publicación en Google Play | Computación Móvil</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="../logo_computacion_movil.svg">
+    <style>
+        :root {
+            --azul-oscuro: #1a2e44;
+            --naranja: #f37021;
+            --play-store: #3bccff;
+            --gris-fondo: #f8f9fa;
+            --blanco: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6; margin: 0;
+            background-color: var(--gris-fondo); color: #444;
+        }
+
+        nav {
+            background-color: var(--azul-oscuro); padding: 1rem 2rem;
+            display: flex; justify-content: space-between; align-items: center;
+            position: sticky; top: 0; z-index: 1000;
+        }
+
+        nav a { color: white; text-decoration: none; font-weight: bold; }
+
+        .container {
+            max-width: 900px; margin: 2rem auto;
+            background: var(--blanco); padding: 3rem;
+            border-radius: 10px; box-shadow: 0 0 20px rgba(0,0,0,0.05);
+        }
+
+        .header-tema {
+            border-bottom: 3px solid var(--naranja);
+            margin-bottom: 2rem; padding-bottom: 1rem;
+        }
+
+        /* Guía de Pasos (Roadmap) */
+        .roadmap {
+            position: relative;
+            padding: 20px 0;
+        }
+
+        .roadmap-step {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 30px;
+            padding: 1.5rem;
+            background: #fff;
+            border: 1px solid #eee;
+            border-radius: 10px;
+            position: relative;
+        }
+
+        .step-icon-box {
+            background: var(--azul-oscuro);
+            color: white;
+            min-width: 50px; height: 50px;
+            border-radius: 50%;
+            display: flex; justify-content: center; align-items: center;
+            font-size: 1.2rem; font-weight: bold;
+        }
+
+        .step-content h3 { margin-top: 0; color: var(--azul-oscuro); font-size: 1.1rem; }
+        .step-content p { font-size: 0.9rem; margin-bottom: 0; }
+
+        /* Alertas y Detalles Técnicos */
+        .cost-badge {
+            background: #e1f5fe; color: #0288d1;
+            padding: 10px 20px; border-radius: 8px;
+            display: inline-flex; align-items: center; gap: 10px;
+            font-weight: bold; margin-bottom: 1.5rem;
+        }
+
+        .specs-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px; margin-top: 10px;
+        }
+
+        .spec-item {
+            background: #f1f3f5; padding: 10px; border-radius: 5px;
+            font-size: 0.8rem; border: 1px solid #dee2e6;
+        }
+
+        .spec-item strong { color: var(--naranja); display: block; }
+
+        /* Footer Nav */
+        .page-nav {
+            display: flex; justify-content: space-between;
+            margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #eee;
+        }
+
+        .btn-nav { padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: bold; }
+        .btn-prev { background: #eee; color: #555; }
+        .btn-finish { background: var(--naranja); color: white; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="../index.html"><i class="fas fa-home"></i> Inicio</a>
+        <span style="color: white;">Unidad 4 > Publicación Final</span>
+    </nav>
+
+    <div class="container">
+        <div class="header-tema">
+            <span style="color: var(--naranja); font-weight: bold;">TEMA 2 - SUBTEMA 4</span>
+            <h1>Publicación de APP en Google Play Store</h1>
+        </div>
+
+        <section>
+            <p>El proceso de publicación en la tienda oficial de Android requiere una serie de pasos administrativos y de calidad para garantizar una buena experiencia al usuario final.</p>
+
+            <!-- REQUISITO DE CUENTA -->
+            <div class="cost-badge">
+                <i class="fas fa-university"></i>
+                Inversión inicial: Pago único de 25 USD para la cuenta de desarrollador.
+            </div>
+
+            <div class="roadmap">
+                
+                <!-- PASO 1 -->
+                <div class="roadmap-step">
+                    <div class="step-icon-box">1</div>
+                    <div class="step-content">
+                        <h3>Crear Cuenta de Desarrollador</h3>
+                        <p>Necesitas una cuenta de Google y aceptar el acuerdo de distribución. Deberás completar tu perfil con nombre de desarrollador, sitio web y dirección física (Pág. 178).</p>
+                    </div>
+                </div>
+
+                <!-- PASO 2 -->
+                <div class="roadmap-step">
+                    <div class="step-icon-box">2</div>
+                    <div class="step-content">
+                        <h3>Configurar la Ficha de Play Store</h3>
+                        <p>Es la "vitrina" de tu app. Se deben cumplir los siguientes límites de texto (Pág. 179):</p>
+                        <div class="specs-grid">
+                            <div class="spec-item"><strong>Nombre</strong> Máximo 50 caracteres.</div>
+                            <div class="spec-item"><strong>Desc. Breve</strong> Máximo 80 caracteres.</div>
+                            <div class="spec-item"><strong>Desc. Completa</strong> Máximo 4.000 caracteres.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PASO 3 -->
+                <div class="roadmap-step">
+                    <div class="step-icon-box">3</div>
+                    <div class="step-content">
+                        <h3>Recursos Gráficos y Privacidad</h3>
+                        <p>Se deben subir hasta <strong>8 capturas de pantalla</strong> por cada tipo de dispositivo compatible. Además, es obligatorio incluir un enlace a la <strong>Política de Privacidad</strong> (Pág. 179).</p>
+                    </div>
+                </div>
+
+                <!-- PASO 4 -->
+                <div class="roadmap-step">
+                    <div class="step-icon-box">4</div>
+                    <div class="step-content">
+                        <h3>Subir el archivo APK / App Bundle</h3>
+                        <p>Cargas el código fuente. Puedes elegir entre versiones de prueba interna, beta cerrada, beta abierta o producción (Pág. 179).</p>
+                    </div>
+                </div>
+
+                <!-- PASO 5 -->
+                <div class="roadmap-step">
+                    <div class="step-icon-box">5</div>
+                    <div class="step-content">
+                        <h3>Clasificación y Distribución</h3>
+                        <p>Debes completar el cuestionario de clasificación por edad para evitar que la app sea eliminada. También defines si la app será <strong>gratuita o de pago</strong> y en qué países estará disponible (Pág. 180).</p>
+                    </div>
+                </div>
+
+                <!-- PASO 6 -->
+                <div class="roadmap-step" style="border-left: 5px solid #28a745;">
+                    <div class="step-icon-box" style="background-color: #28a745;">6</div>
+                    <div class="step-content">
+                        <h3>Revisión y Lanzamiento</h3>
+                        <p>Tras seleccionar "Revisar y Lanzar", Google validará tu app. Si es la primera vez, el proceso demora unos <strong>días</strong>; para actualizaciones, solo <strong>unas horas</strong> (Pág. 180).</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <div class="page-nav">
+            <a href="t2_s3.html" class="btn-nav btn-prev"><i class="fas fa-arrow-left"></i> Subtema 3: Construcción</a>
+            <a href="../index.html" class="btn-nav btn-finish">Finalizar Compendio <i class="fas fa-graduation-cap"></i></a>
+        </div>
+    </div>
+
+    <footer style="text-align: center; padding: 2rem; font-size: 0.8rem; color: #888;">
+        UNEMI - Computación Móvil | Fin del Recurso de Aprendizaje
+    </footer>
+
+</body>
+</html>

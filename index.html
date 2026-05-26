@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computación Móvil | UNEMI - Compendio Digital</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="logo_computacion_movil.svg">
+    <style>
+        :root {
+            --azul-oscuro: #1a2e44;
+            --naranja: #f37021;
+            --gris-claro: #f4f7f6;
+            --blanco: #ffffff;
+            --pdf-rojo: #e74c3c;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            background-color: var(--gris-claro);
+            color: #333;
+        }
+
+        header {
+            background-color: var(--azul-oscuro);
+            color: var(--blanco);
+            padding: 1.5rem;
+            text-align: center;
+            border-bottom: 5px solid var(--naranja);
+        }
+
+        /* Estilo Hero con botón PDF */
+        .hero {
+            background: linear-gradient(rgba(26, 46, 68, 0.9), rgba(26, 46, 68, 0.9)), url('https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&q=80&w=1000');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .btn-pdf {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background-color: var(--pdf-rojo);
+            color: white;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-weight: bold;
+            margin-top: 1.5rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .btn-pdf:hover {
+            background-color: #c0392b;
+            transform: scale(1.05);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: -30px auto 2rem;
+            padding: 0 20px;
+        }
+
+        /* Barra de fuente original */
+        .source-bar {
+            background: var(--blanco);
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 5px solid var(--naranja);
+        }
+
+        .grid-unidades {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .card-unidad {
+            background: var(--blanco);
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-unidad:hover { transform: translateY(-10px); }
+
+        .card-unidad h2 {
+            color: var(--azul-oscuro);
+            font-size: 1.2rem;
+            border-left: 4px solid var(--naranja);
+            padding-left: 10px;
+            margin: 10px 0;
+        }
+
+        .tema-link {
+            text-decoration: none;
+            color: #555;
+            font-weight: bold;
+            display: block;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .subtemas-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 0.5rem;
+        }
+
+        .subtemas-list li { margin-bottom: 8px; }
+
+        .subtemas-list a {
+            text-decoration: none;
+            color: #007bff;
+            font-size: 0.85rem;
+            transition: color 0.2s;
+        }
+
+        .subtemas-list a:hover { color: var(--naranja); text-decoration: underline; }
+
+        .badge {
+            background-color: var(--naranja);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            display: inline-block;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: var(--azul-oscuro);
+            color: white;
+            margin-top: 3rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>COMPUTACIÓN MÓVIL</h1>
+        <p>Universidad Estatal de Milagro</p>
+    </header>
+
+    <section class="hero">
+        <h2>Bienvenido al Recurso de Aprendizaje Digital</h2>
+        <p>Explora de forma interactiva todo el contenido del curso.</p>
+        
+        <!-- ENLACE AL PDF -->
+        <a href="Computación Móvil – Compendios.pdf" target="_blank" class="btn-pdf">
+            <i class="fas fa-file-pdf"></i> Descargar Compendio Completo (PDF)
+        </a>
+    </section>
+
+    <div class="container">
+        
+        <!-- Barra informativa de apoyo -->
+        <div class="source-bar">
+            <span><i class="fas fa-info-circle" style="color: var(--naranja);"></i> Este sitio web es una versión digitalizada del <strong>Compendio del Autor</strong>.</span>
+            <a href="Computación Móvil – Compendios.pdf" target="_blank" style="color: var(--pdf-rojo); font-weight: bold; text-decoration: none; font-size: 0.9rem;">
+                Abrir PDF original
+            </a>
+        </div>
+
+        <div class="grid-unidades">
+            
+            <!-- UNIDAD 1 -->
+            <div class="card-unidad">
+                <span class="badge">Unidad 1</span>
+                <h2>Introducción a la Computación Móvil</h2>
+                <div class="tema-link">Tema 1: Generalidades</div>
+                <ul class="subtemas-list">
+                    <li><a href="u1/t1_s1.html"><i class="fas fa-file-alt"></i> ¿Qué es una app móvil?</a></li>
+                    <li><a href="u1/t1_s2.html"><i class="fas fa-file-alt"></i> Características principales</a></li>
+                    <li><a href="u1/t1_s3.html"><i class="fas fa-file-alt"></i> Tipos de apps</a></li>
+                    <li><a href="u1/t1_s4.html"><i class="fas fa-file-alt"></i> Beneficios</a></li>
+                </ul>
+                <div class="tema-link">Tema 2: Diseño</div>
+                <ul class="subtemas-list">
+                    <li><a href="u1/t2_s1.html"><i class="fas fa-drafting-compass"></i> Proceso de diseño</a></li>
+                    <li><a href="u1/t2_s2.html"><i class="fas fa-list"></i> Categorías</a></li>
+                    <li><a href="u1/t2_s3.html"><i class="fas fa-border-all"></i> Wireframes</a></li>
+                    <li><a href="u1/t2_s4.html"><i class="fas fa-user-check"></i> UX y Principios</a></li>
+                </ul>
+            </div>
+
+            <!-- UNIDAD 2 -->
+            <div class="card-unidad">
+                <span class="badge">Unidad 2</span>
+                <h2>Desarrollo Multiplataforma</h2>
+                <div class="tema-link">Tema 1: Diseño de Apps</div>
+                <ul class="subtemas-list">
+                    <li><a href="u2/t1_s1.html"><i class="fas fa-mobile-alt"></i> Definición Multiplataforma</a></li>
+                    <li><a href="u2/t1_s2.html"><i class="fas fa-star"></i> Características</a></li>
+                    <li><a href="u2/t1_s3.html"><i class="fas fa-tools"></i> Herramientas</a></li>
+                    <li><a href="u2/t1_s4.html"><i class="fas fa-lightbulb"></i> Ejemplos</a></li>
+                </ul>
+                <div class="tema-link">Tema 2: Plataformas</div>
+                <ul class="subtemas-list">
+                    <li><a href="u2/t2_s1.html"><i class="fas fa-code"></i> Lenguajes de desarrollo</a></li>
+                    <li><a href="u2/t2_s2.html"><i class="fa fa-brands fa-android"></i> Android e iOS</a></li>
+                    <li><a href="u2/t2_s3.html"><i class="fas fa-layer-group"></i> Plataformas móviles</a></li>
+                    <li><a href="u2/t2_s4.html"><i class="fas fa-laptop-code"></i> Entornos (IDE)</a></li>
+                </ul>
+            </div>
+
+            <!-- UNIDAD 3 -->
+            <div class="card-unidad">
+                <span class="badge">Unidad 3</span>
+                <h2>Desarrollo de Apps</h2>
+                <div class="tema-link">Tema 1: Nativo</div>
+                <ul class="subtemas-list">
+                    <li><a href="u3/t1_s1.html"><i class="fas fa-cog"></i> Configuración Android Studio</a></li>
+                    <li><a href="u3/t1_s2.html"><i class="fas fa-plus-circle"></i> App de ejemplo</a></li>
+                    <li><a href="u3/t1_s3.html"><i class="fas fa-sync"></i> Ciclo de Vida / Layouts</a></li>
+                    <li><a href="u3/t1_s4.html"><i class="fas fa-cubes"></i> Componentes Android</a></li>
+                </ul>
+                <div class="tema-link">Tema 2: Frameworks</div>
+                <ul class="subtemas-list">
+                    <li><a href="u3/t2_s1.html"><i class="fas fa-rocket"></i> Introducción a Flutter</a></li>
+                    <li><a href="u3/t2_s2.html"><i class="fas fa-magic"></i> Estilos y Animaciones</a></li>
+                    <li><a href="u3/t2_s3.html"><i class="fas fa-database"></i> Gestión de Estado</a></li>
+                    <li><a href="u3/t2_s4.html"><i class="fas fa-sitemap"></i> Patrón MVC</a></li>
+                </ul>
+            </div>
+
+            <!-- UNIDAD 4 -->
+            <div class="card-unidad">
+                <span class="badge">Unidad 4</span>
+                <h2>Aplicaciones Avanzadas</h2>
+                <div class="tema-link">Tema 1: Microservicios</div>
+                <ul class="subtemas-list">
+                    <li><a href="u4/t1_s1.html"><i class="fas fa-network-wired"></i> Intro a Microservicios</a></li>
+                    <li><a href="u4/t1_s2.html"><i class="fas fa-project-diagram"></i> Elementos clave</a></li>
+                    <li><a href="u4/t1_s3.html"><i class="fa fa-brands fa-node-js"></i> Servicios Node.js</a></li>
+                    <li><a href="u4/t1_s4.html"><i class="fas fa-vial"></i> Escenarios CRUD</a></li>
+                </ul>
+                <div class="tema-link">Tema 2: Híbridas</div>
+                <ul class="subtemas-list">
+                    <li><a href="u4/t2_s1.html"><i class="fas fa-globe"></i> Intro a PWA</a></li>
+                    <li><a href="u4/t2_s2.html"><i class="fas fa-css3-alt"></i> Diseño Responsive CSS</a></li>
+                    <li><a href="u4/t2_s3.html"><i class="fas fa-building"></i> Construcción Híbrida</a></li>
+                    <li><a href="u4/t2_s4.html"><i class="fas fa-upload"></i> Publicación en Store</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Computación Móvil - UNEMI. Proyecto de Digitalización Educativa.</p>
+    </footer>
+
+</body>
+</html>

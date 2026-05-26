@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herramientas Multiplataforma | Computación Móvil</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="../logo_computacion_movil.svg">
+    <style>
+        :root {
+            --azul-oscuro: #1a2e44;
+            --naranja: #f37021;
+            --gris-fondo: #f8f9fa;
+            --blanco: #ffffff;
+            --texto: #444;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            background-color: var(--gris-fondo);
+            color: var(--texto);
+        }
+
+        nav {
+            background-color: var(--azul-oscuro);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a { color: white; text-decoration: none; font-weight: bold; }
+
+        .container {
+            max-width: 1100px;
+            margin: 2rem auto;
+            background: var(--blanco);
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.05);
+        }
+
+        .header-tema {
+            border-bottom: 3px solid var(--naranja);
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+        }
+
+        /* Grid de Herramientas */
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 20px;
+            margin-top: 2rem;
+        }
+
+        .tool-card {
+            background: white;
+            border: 1px solid #eee;
+            border-radius: 10px;
+            padding: 1.5rem;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        .tool-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 1rem;
+        }
+
+        .tool-header i { font-size: 2rem; }
+        .tool-header h3 { margin: 0; color: var(--azul-oscuro); }
+
+        /* Colores temáticos por empresa */
+        .react { border-top: 5px solid #61dafb; } /* Facebook Blue */
+        .flutter { border-top: 5px solid #02569b; } /* Google Blue */
+        .xamarin { border-top: 5px solid #3498db; } /* Microsoft Blue */
+        .ionic { border-top: 5px solid #4e8ef7; }
+        .other { border-top: 5px solid var(--naranja); }
+
+        .lang-badge {
+            background: #f1f3f5;
+            color: #495057;
+            padding: 3px 10px;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .features-list {
+            padding-left: 20px;
+            margin: 10px 0;
+            font-size: 0.9rem;
+        }
+
+        /* Banner de Backend */
+        .backend-banner {
+            background: linear-gradient(90deg, #FFCA28, #FFA000);
+            color: #1a2e44;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 3rem;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .page-nav {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #eee;
+        }
+
+        .btn-nav { padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: bold; }
+        .btn-prev { background: #eee; color: #555; }
+        .btn-next { background: var(--azul-oscuro); color: white; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="../index.html"><i class="fas fa-home"></i> Inicio</a>
+        <span style="color: white;">Unidad 2 > Tema 1</span>
+    </nav>
+
+    <div class="container">
+        <div class="header-tema">
+            <span style="color: var(--naranja); font-weight: bold;">TEMA 1 - SUBTEMA 3</span>
+            <h1>Herramientas para el desarrollo multiplataforma</h1>
+        </div>
+
+        <p>El mercado ofrece una amplia gama de frameworks que permiten ampliar el alcance de las aplicaciones a una audiencia masiva con un solo desarrollo.</p>
+
+        <div class="tools-grid">
+            
+            <!-- React Native -->
+            <div class="tool-card react">
+                <div class="tool-header">
+                    <i class="fab fa-react" style="color: #61dafb;"></i>
+                    <h3>React Native</h3>
+                </div>
+                <span class="lang-badge">LENGUAJE: JavaScript</span>
+                <p>Creado por <strong>Facebook</strong>. Es la elección preferida para apps dinámicas como Uber.</p>
+                <ul class="features-list">
+                    <li>Utiliza elementos nativos.</li>
+                    <li>Recarga en caliente (Hot Reload).</li>
+                    <li>Integración perfecta con terceros.</li>
+                </ul>
+            </div>
+
+            <!-- Flutter -->
+            <div class="tool-card flutter">
+                <div class="tool-header">
+                    <i class="fas fa-feather-alt" style="color: #02569b;"></i>
+                    <h3>Flutter</h3>
+                </div>
+                <span class="lang-badge">LENGUAJE: Dart</span>
+                <p>Desarrollado por <strong>Google</strong>. Crea interfaces altamente eficientes y receptivas.</p>
+                <ul class="features-list">
+                    <li>Widgets personalizables expresivos.</li>
+                    <li>Detección de errores integrada.</li>
+                    <li>Compatible con Swift y Java.</li>
+                </ul>
+            </div>
+
+            <!-- Xamarin -->
+            <div class="tool-card xamarin">
+                <div class="tool-header">
+                    <i class="fab fa-microsoft" style="color: #3498db;"></i>
+                    <h3>Xamarin</h3>
+                </div>
+                <span class="lang-badge">LENGUAJE: C# / .NET</span>
+                <p>Propiedad de <strong>Microsoft</strong>. Ideal para compartir código entre iOS, Android y Windows.</p>
+                <ul class="features-list">
+                    <li>Acceso completo a la API nativa.</li>
+                    <li>Uso del framework Mono.</li>
+                    <li>Bibliotecas de alto rendimiento.</li>
+                </ul>
+            </div>
+
+            <!-- Ionic -->
+            <div class="tool-card ionic">
+                <div class="tool-header">
+                    <i class="fas fa-bolt" style="color: #4e8ef7;"></i>
+                    <h3>Ionic</h3>
+                </div>
+                <span class="lang-badge">LENGUAJE: HTML5 / CSS / JS</span>
+                <p>Ideal para aplicaciones híbridas. Muy fácil de usar para desarrolladores web.</p>
+                <ul class="features-list">
+                    <li>Base de código unificada.</li>
+                    <li>Emulación de interfaz nativa.</li>
+                    <li>Gran biblioteca de componentes.</li>
+                </ul>
+            </div>
+
+            <!-- Otros -->
+            <div class="tool-card other">
+                <div class="tool-header">
+                    <i class="fas fa-ellipsis-h" style="color: var(--naranja);"></i>
+                    <h3>Otras Soluciones</h3>
+                </div>
+                <p>El compendio también destaca herramientas especializadas:</p>
+                <ul class="features-list">
+                    <li><strong>Unity:</strong> Potente motor para juegos 3D.</li>
+                    <li><strong>Appery.io:</strong> Plataforma de bajo código (Drag & Drop).</li>
+                    <li><strong>Sencha:</strong> Enfoque en componentes web probados.</li>
+                    <li><strong>Alpha Anywhere:</strong> Orientado a nivel empresarial.</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- Firebase (Destacado al final, Pág 54) -->
+        <div class="backend-banner">
+            <i class="fas fa-database fa-3x"></i>
+            <div>
+                <h3>Firebase (Backend-as-a-Service)</h3>
+                <p>La oferta principal de <strong>Google</strong> para proporcionar servicios de base de datos, hosting y métricas sin necesidad de programar en el servidor. Es el complemento ideal para estas herramientas.</p>
+            </div>
+        </div>
+
+        <div class="page-nav">
+            <a href="t1_s2.html" class="btn-nav btn-prev"><i class="fas fa-arrow-left"></i> Subtema 2: Características</a>
+            <a href="t1_s4.html" class="btn-nav btn-next">Subtema 4: Ejemplos <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </div>
+
+    <footer style="text-align: center; padding: 2rem; font-size: 0.8rem; color: #888;">
+        UNEMI - Computación Móvil
+    </footer>
+
+</body>
+</html>

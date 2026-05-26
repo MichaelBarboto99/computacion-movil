@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configuración Android Studio | Computación Móvil</title>
+    <link rel="icon" type="image/x-icon" href="../logo_computacion_movil.svg">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --azul-oscuro: #1a2e44;
+            --naranja: #f37021;
+            --android-verde: #3DDC84;
+            --gris-fondo: #f8f9fa;
+            --blanco: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            background-color: var(--gris-fondo);
+            color: #444;
+        }
+
+        nav {
+            background-color: var(--azul-oscuro);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a { color: white; text-decoration: none; font-weight: bold; }
+
+        .container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            background: var(--blanco);
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.05);
+        }
+
+        .header-tema {
+            border-bottom: 3px solid var(--naranja);
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+        }
+
+        /* Características Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+            margin: 2rem 0;
+        }
+
+        .feature-item {
+            background: #f1fdf5;
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--android-verde);
+            font-size: 0.9rem;
+        }
+
+        /* Requisitos Tabs */
+        .req-container {
+            background: var(--azul-oscuro);
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+        }
+
+        .os-badge {
+            background: var(--naranja);
+            padding: 3px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        /* Paso a paso visual */
+        .step-box {
+            border: 1px solid #ddd;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            background: white;
+        }
+
+        .step-box h3 {
+            margin-top: 0;
+            color: var(--azul-oscuro);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .highlight-blue {
+            color: #007bff;
+            font-weight: bold;
+        }
+
+        .page-nav {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #eee;
+        }
+
+        .btn-nav { padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: bold; }
+        .btn-prev { background: #eee; color: #555; }
+        .btn-next { background: var(--azul-oscuro); color: white; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="../index.html"><i class="fas fa-home"></i> Inicio</a>
+        <span style="color: white;">Unidad 3 > Desarrollo Nativo</span>
+    </nav>
+
+    <div class="container">
+        <div class="header-tema">
+            <span style="color: var(--naranja); font-weight: bold;">TEMA 1 - SUBTEMA 1</span>
+            <h1>Configuración de entorno Android Studio</h1>
+        </div>
+
+        <section>
+            <p><strong>Android Studio</strong> es el entorno de desarrollo oficial para el sistema operativo Android. Ofrece una gran flexibilidad y herramientas avanzadas para convertir ideas en aplicaciones funcionales.</p>
+
+            <h3>Características Principales (Pág. 88)</h3>
+            <div class="features-grid">
+                <div class="feature-item"><i class="fas fa-hammer"></i> Sistema basado en <strong>Gradle</strong> (Groovy/Kotlin DSL).</div>
+                <div class="feature-item"><i class="fas fa-bolt"></i> <strong>Hot Reload:</strong> Modifica código sin reiniciar la app.</div>
+                <div class="feature-item"><i class="fas fa-copy"></i> Plantillas de compilación y códigos de muestra.</div>
+                <div class="feature-item"><i class="fas fa-cloud"></i> Integración con <strong>Google Cloud Platform</strong>.</div>
+            </div>
+
+            <div class="req-container">
+                <h2><i class="fas fa-laptop-code"></i> Requisitos Mínimos (Pág. 89)</h2>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <div>
+                        <p><span class="os-badge">Windows / macOS / Linux</span></p>
+                        <ul>
+                            <li><strong>RAM:</strong> 8 GB o más.</li>
+                            <li><strong>Espacio:</strong> 8 GB mínimo (IDE + SDK + Emulador).</li>
+                            <li><strong>Resolución:</strong> 1280 x 800 mínimo.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <p><strong>Procesador:</strong></p>
+                        <p>Arquitectura x86_64; Intel Core 2da Gen o posterior. En macOS, compatible con chips ARM (Apple Silicon).</p>
+                    </div>
+                </div>
+            </div>
+
+            <h2>El corazón técnico: JDK (Pág. 90)</h2>
+            <p>Antes de instalar el IDE, es fundamental el <strong>Java Development Kit (JDK)</strong>. Este software incluye el intérprete, compilador y herramientas de desarrollo (JDT) necesarias para que las aplicaciones sean portables entre sistemas.</p>
+
+            <h2>Configuración del Emulador (AVD)</h2>
+            <div class="step-box">
+                <h3><i class="fas fa-mobile-alt"></i> Device Manager</h3>
+                <p>El <span class="highlight-blue">Android Device Manager</span> se usa para crear y configurar dispositivos virtuales Android (AVD). Esto permite probar la aplicación en diversas configuraciones que simulan teléfonos físicos reales.</p>
+                <p><strong>Pasos según el compendio (Págs. 94-95):</strong></p>
+                <ol>
+                    <li>Seleccionar <strong>"Create Device"</strong> en el Device Manager.</li>
+                    <li>Elegir la categoría (Phone) y el modelo (ej. Pixel 7).</li>
+                    <li>Seleccionar la imagen del Sistema Operativo (ej. Android 13.0 "Tiramisu").</li>
+                    <li>Verificar la configuración y finalizar.</li>
+                </ol>
+            </div>
+        </section>
+
+        <div class="page-nav">
+            <a href="../index.html" class="btn-nav btn-prev"><i class="fas fa-arrow-left"></i> Volver al Índice</a>
+            <a href="t1_s2.html" class="btn-nav btn-next">Subtema 2: App de Ejemplo <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </div>
+
+    <footer style="text-align: center; padding: 2rem; font-size: 0.8rem; color: #888;">
+        UNEMI - Computación Móvil | Unidad 3
+    </footer>
+
+</body>
+</html>

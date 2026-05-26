@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proceso de Diseño y Desarrollo | Computación Móvil</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="../logo_computacion_movil.svg">
+    <style>
+        :root {
+            --azul-oscuro: #1a2e44;
+            --naranja: #f37021;
+            --gris-fondo: #f8f9fa;
+            --blanco: #ffffff;
+            --texto: #444;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            background-color: var(--gris-fondo);
+            color: var(--texto);
+        }
+
+        nav {
+            background-color: var(--azul-oscuro);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a { color: white; text-decoration: none; font-weight: bold; }
+
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            background: var(--blanco);
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.05);
+        }
+
+        .header-tema {
+            border-bottom: 3px solid var(--naranja);
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+        }
+
+        .highlight-quote {
+            background: #eef2f7;
+            padding: 1.5rem;
+            border-left: 5px solid var(--azul-oscuro);
+            font-style: italic;
+            margin: 1.5rem 0;
+        }
+
+        /* Estilo del Proceso (Stepper) */
+        .process-container {
+            position: relative;
+            padding: 20px 0;
+        }
+
+        .step-card {
+            position: relative;
+            padding-left: 60px;
+            margin-bottom: 40px;
+        }
+
+        .step-number {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 40px;
+            height: 40px;
+            background-color: var(--naranja);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            z-index: 2;
+        }
+
+        .step-card::before {
+            content: "";
+            position: absolute;
+            left: 19px;
+            top: 40px;
+            width: 2px;
+            height: calc(100% + 20px);
+            background-color: #ddd;
+            z-index: 1;
+        }
+
+        .step-card:last-child::before { display: none; }
+
+        .step-content h3 {
+            margin: 0 0 10px 0;
+            color: var(--azul-oscuro);
+        }
+
+        .sub-steps {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .sub-badge {
+            background: #f1f3f5;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            color: #666;
+            border: 1px solid #dee2e6;
+        }
+
+        .page-nav {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #eee;
+        }
+
+        .btn-nav {
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .btn-prev { background: #eee; color: #555; }
+        .btn-next { background: var(--azul-oscuro); color: white; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="../index.html"><i class="fas fa-home"></i> Inicio</a>
+        <span style="color: white;">Unidad 1 > Tema 2: Diseño</span>
+    </nav>
+
+    <div class="container">
+        <div class="header-tema">
+            <span style="color: var(--naranja); font-weight: bold;">TEMA 2 - SUBTEMA 1</span>
+            <h1>El proceso de diseño y desarrollo de una app</h1>
+        </div>
+
+        <section>
+            <p>Muchos usuarios piensan que el diseño de una app es solo elegir colores y tipografías, pero su verdadera responsabilidad radica en <strong>estructurar la funcionalidad</strong> y asegurar transiciones fluidas entre pantallas.</p>
+            
+            <div class="highlight-quote">
+                "El diseño es tan crucial como el desarrollo; es la cara visible que hace atractivo el código subyacente y permite una experiencia de usuario única."
+            </div>
+
+            <h2>Etapas del Proceso</h2>
+            <div class="process-container">
+                
+                <!-- PASO 1 -->
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Conceptualización</h3>
+                        <p>Fase de ideación e investigación de mercado. Se busca entender las necesidades reales de los usuarios y verificar la viabilidad del concepto.</p>
+                        <div class="sub-steps">
+                            <span class="sub-badge">Ideación</span>
+                            <span class="sub-badge">Investigación</span>
+                            <span class="sub-badge">Planificación</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PASO 2 -->
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Definición</h3>
+                        <p>Se documenta el público objetivo y la funcionalidad. Se utilizan metodologías como "Personas" y "User Journey" para definir el alcance del proyecto.</p>
+                        <div class="sub-steps">
+                            <span class="sub-badge">Definición de usuarios</span>
+                            <span class="sub-badge">Definición funcional</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PASO 3 -->
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Diseño (UX/UI)</h3>
+                        <p>La etapa más crucial. Aquí se materializan los conceptos. Se divide en sub-fases técnicas antes de pasar al código.</p>
+                        <div class="sub-steps">
+                            <span class="sub-badge">Wireframes</span>
+                            <span class="sub-badge">Prototipos</span>
+                            <span class="sub-badge">Pruebas de usuario</span>
+                            <span class="sub-badge">Diseño visual (UI-Kit)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PASO 4 -->
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Desarrollo</h3>
+                        <p>El desarrollador transforma los diseños en funcionalidad real. Se centra en la codificación y corrección de errores iniciales.</p>
+                    </div>
+                </div>
+
+                <!-- PASO 5 -->
+                <div class="step-card">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h3>Publicación y Seguimiento</h3>
+                        <p>Lanzamiento en las tiendas oficiales (App Store / Google Play) y monitoreo continuo mediante análisis de datos y feedback de usuarios.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <div class="page-nav">
+            <a href="t1_s4.html" class="btn-nav btn-prev"><i class="fas fa-arrow-left"></i> Tema 1: Beneficios</a>
+            <a href="t2_s2.html" class="btn-nav btn-next">Subtema 2: Categorías <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </div>
+
+    <footer style="text-align: center; padding: 2rem; font-size: 0.8rem; color: #888;">
+        UNEMI - Computación Móvil
+    </footer>
+
+</body>
+</html>

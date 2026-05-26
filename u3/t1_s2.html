@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App de Ejemplo: Calculadora | Computación Móvil</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="../logo_computacion_movil.svg">
+    <style>
+        :root {
+            --azul-oscuro: #1a2e44;
+            --naranja: #f37021;
+            --gris-fondo: #f8f9fa;
+            --blanco: #ffffff;
+            --code-bg: #2d2d2d;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            background-color: var(--gris-fondo);
+            color: #444;
+        }
+
+        nav {
+            background-color: var(--azul-oscuro);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a { color: white; text-decoration: none; font-weight: bold; }
+
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            background: var(--blanco);
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.05);
+        }
+
+        .header-tema {
+            border-bottom: 3px solid var(--naranja);
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+        }
+
+        /* Estilo de Pasos del Tutorial */
+        .tutorial-step {
+            margin-bottom: 3rem;
+            padding: 1.5rem;
+            border-left: 5px solid #ddd;
+            background: #fff;
+        }
+
+        .tutorial-step h3 {
+            margin-top: 0;
+            color: var(--azul-oscuro);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .tutorial-step h3 span {
+            background: var(--naranja);
+            color: white;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 0.9rem;
+        }
+
+        .file-box {
+            display: flex;
+            gap: 20px;
+            margin: 1.5rem 0;
+        }
+
+        .file-type {
+            flex: 1;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .xml-file { background: #fff3cd; color: #856404; border: 1px solid #ffeeba; }
+        .java-file { background: #d1ecf1; color: #0c5460; border: 1px solid #bee5eb; }
+
+        /* Lista de Componentes */
+        .component-list {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .component-item {
+            background: #f8f9fa;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            border: 1px solid #eee;
+        }
+
+        .code-snippet {
+            background: var(--code-bg);
+            color: #ccc;
+            padding: 1rem;
+            border-radius: 5px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.85rem;
+            margin-top: 10px;
+        }
+
+        .page-nav {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #eee;
+        }
+
+        .btn-nav { padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: bold; }
+        .btn-prev { background: #eee; color: #555; }
+        .btn-next { background: var(--azul-oscuro); color: white; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="../index.html"><i class="fas fa-home"></i> Inicio</a>
+        <span style="color: white;">Unidad 3 > Tutorial Práctico</span>
+    </nav>
+
+    <div class="container">
+        <div class="header-tema">
+            <span style="color: var(--naranja); font-weight: bold;">TEMA 1 - SUBTEMA 2</span>
+            <h1>Creación de una aplicación de ejemplo</h1>
+        </div>
+
+        <p>En este ejercicio práctico desarrollaremos una <strong>Calculadora básica</strong> en Android Studio para comprender el flujo de trabajo real.</p>
+
+        <!-- PASO 1: PROYECTO -->
+        <div class="tutorial-step">
+            <h3><span>1</span> Configuración Inicial</h3>
+            <p>Iniciamos un nuevo proyecto en Android Studio. Para este caso, seleccionamos la plantilla <strong>"Empty Views Activity"</strong> (Pág. 96) y nos aseguramos de elegir <strong>Java</strong> como lenguaje de programación.</p>
+        </div>
+
+        <!-- PASO 2: LOS ARCHIVOS -->
+        <div class="tutorial-step">
+            <h3><span>2</span> Estructura Dúplex</h3>
+            <p>Toda interfaz en Android se compone de dos archivos fundamentales que trabajan en conjunto (Pág. 97):</p>
+            <div class="file-box">
+                <div class="file-type xml-file">
+                    <i class="fas fa-file-code"></i><br>Archivo .XML
+                    <p style="font-weight: normal; font-size: 0.8rem;">Define el diseño visual de la pantalla.</p>
+                </div>
+                <div class="file-type java-file">
+                    <i class="fab fa-java"></i><br>Archivo .JAVA
+                    <p style="font-weight: normal; font-size: 0.8rem;">Define la funcionalidad y lógica.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- PASO 3: DISEÑO -->
+        <div class="tutorial-step">
+            <h3><span>3</span> Diseño de la Interfaz</h3>
+            <p>Arrastramos los elementos desde la paleta de herramientas a la interfaz gráfica. Necesitaremos (Pág. 97):</p>
+            <div class="component-list">
+                <div class="component-item"><strong>1 TextView:</strong> Para mostrar el resultado.</div>
+                <div class="component-item"><strong>2 EditText:</strong> Para ingresar los números.</div>
+                <div class="component-item"><strong>4 Buttons:</strong> Suma, Resta, Mult. y Div.</div>
+            </div>
+            <p><small><i class="fas fa-info-circle"></i> Tip: Es vital modificar el <strong>ID</strong> de cada elemento para identificarlo luego en el código.</small></p>
+        </div>
+
+        <!-- PASO 4: LÓGICA -->
+        <div class="tutorial-step">
+            <h3><span>4</span> Programación de la Lógica</h3>
+            <p>En el archivo Java, enlazamos los componentes visuales con variables del código usando <code>findViewById</code> y definimos la función de cálculo (Pág. 99-100):</p>
+            <div class="code-snippet">
+                public void sumar(View view) { <br>
+                &nbsp;&nbsp;// Lógica para obtener valores y sumarlos...<br>
+                }
+            </div>
+            <p style="margin-top:15px;">Finalmente, en la parte gráfica del botón, buscamos el evento <strong>onClick</strong> y seleccionamos la función creada.</p>
+        </div>
+
+        <!-- PASO 5: EJECUCIÓN -->
+        <div class="tutorial-step" style="border-color: var(--naranja);">
+            <h3><span>5</span> Prueba en Emulador</h3>
+            <p>Utilizamos el <strong>Device Manager</strong> para encender el teléfono virtual y ejecutamos la app con el icono de "Play". Si todo es correcto, la calculadora procesará las operaciones en tiempo real (Pág. 100).</p>
+        </div>
+
+        <div class="page-nav">
+            <a href="t1_s1.html" class="btn-nav btn-prev"><i class="fas fa-arrow-left"></i> Subtema 1: Configuración</a>
+            <a href="t1_s3.html" class="btn-nav btn-next">Subtema 3: Ciclo de Vida <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </div>
+
+    <footer style="text-align: center; padding: 2rem; font-size: 0.8rem; color: #888;">
+        UNEMI - Computación Móvil
+    </footer>
+
+</body>
+</html>

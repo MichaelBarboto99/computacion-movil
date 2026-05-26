@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escenarios de Servicios y Retrofit | Computación Móvil</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="../logo_computacion_movil.svg">
+    <style>
+        :root {
+            --azul-oscuro: #1a2e44;
+            --naranja: #f37021;
+            --retrofit-purple: #673ab7;
+            --gris-fondo: #f8f9fa;
+            --blanco: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6; margin: 0;
+            background-color: var(--gris-fondo); color: #444;
+        }
+
+        nav {
+            background-color: var(--azul-oscuro); padding: 1rem 2rem;
+            display: flex; justify-content: space-between; align-items: center;
+            position: sticky; top: 0; z-index: 1000;
+        }
+
+        nav a { color: white; text-decoration: none; font-weight: bold; }
+
+        .container {
+            max-width: 1000px; margin: 2rem auto;
+            background: var(--blanco); padding: 3rem;
+            border-radius: 10px; box-shadow: 0 0 20px rgba(0,0,0,0.05);
+        }
+
+        .header-tema {
+            border-bottom: 3px solid var(--naranja);
+            margin-bottom: 2rem; padding-bottom: 1rem;
+        }
+
+        /* Bloque Backend vs Frontend */
+        .integration-flow {
+            display: flex; flex-direction: column; gap: 30px;
+        }
+
+        .side-box {
+            padding: 2rem; border-radius: 12px; border: 1px solid #eee;
+            position: relative;
+        }
+
+        .backend-side { border-top: 6px solid var(--azul-oscuro); background: #f8f9ff; }
+        .frontend-side { border-top: 6px solid var(--retrofit-purple); background: #fdfaff; }
+
+        .side-label {
+            position: absolute; top: -15px; right: 20px;
+            background: var(--naranja); color: white;
+            padding: 2px 12px; border-radius: 4px; font-size: 0.75rem; font-weight: bold;
+        }
+
+        /* Pasos Retrofit */
+        .step-list { list-style: none; padding: 0; }
+        .step-item {
+            display: flex; gap: 15px; margin-bottom: 20px;
+            padding: 1rem; background: white; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+        }
+
+        .step-count {
+            background: var(--retrofit-purple); color: white;
+            min-width: 30px; height: 30px; border-radius: 50%;
+            display: flex; justify-content: center; align-items: center; font-weight: bold;
+        }
+
+        .code-inline {
+            background: #eee; padding: 2px 5px; border-radius: 3px;
+            font-family: monospace; font-size: 0.9rem;
+        }
+
+        /* Mobile Result */
+        .mobile-mockup {
+            width: 250px; height: 450px;
+            background: #333; border-radius: 30px;
+            margin: 2rem auto; border: 8px solid #444;
+            padding: 10px; color: white; overflow: hidden;
+        }
+
+        .screen {
+            background: white; width: 100%; height: 100%;
+            border-radius: 15px; color: #333; padding: 10px;
+        }
+
+        .list-item {
+            padding: 10px; border-bottom: 1px solid #eee;
+            font-size: 0.8rem; display: flex; align-items: center; gap: 10px;
+        }
+
+        .page-nav {
+            display: flex; justify-content: space-between;
+            margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #eee;
+        }
+
+        .btn-nav { padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: bold; }
+        .btn-prev { background: #eee; color: #555; }
+        .btn-next { background: var(--azul-oscuro); color: white; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="../index.html"><i class="fas fa-home"></i> Inicio</a>
+        <span style="color: white;">Unidad 4 > Integración de Servicios</span>
+    </nav>
+
+    <div class="container">
+        <div class="header-tema">
+            <span style="color: var(--naranja); font-weight: bold;">TEMA 1 - SUBTEMA 4</span>
+            <h1>Escenarios de ejemplo con Servicios</h1>
+        </div>
+
+        <section class="integration-flow">
+            
+            <!-- PARTE 1: BACKEND -->
+            <div class="side-box backend-side">
+                <span class="side-label">PASO 1: SERVIDOR</span>
+                <h2><i class="fas fa-server"></i> Generación del CRUD en Node.js</h2>
+                <p>Se utiliza el framework <strong>Express</strong> para crear los <em>endpoints</em> relacionados a un CRUD (Pág. 148). Como base de datos, se emplea un archivo <span class="code-inline">.json</span> para la persistencia de datos de estudiantes.</p>
+                <ul style="font-size: 0.9rem;">
+                    <li><strong>Endpoint de lista:</strong> Devuelve todos los registros.</li>
+                    <li><strong>Endpoint por ID:</strong> Obtiene un estudiante específico.</li>
+                    <li><strong>Escenario:</strong> El servidor responde en el puerto 3000 o 8888 según la configuración.</li>
+                </ul>
+            </div>
+
+            <!-- PARTE 2: FRONTEND -->
+            <div class="side-box frontend-side">
+                <span class="side-label">PASO 2: CLIENTE</span>
+                <h2><i class="fas fa-mobile-alt"></i> Consumo con Retrofit (Android)</h2>
+                <p>Para obtener la información del servidor en Android Studio, empleamos la librería <strong>Retrofit</strong> (Pág. 151). Este es el proceso técnico estándar:</p>
+
+                <div class="step-list">
+                    <div class="step-item">
+                        <div class="step-count">1</div>
+                        <div>
+                            <strong>Configuración Gradle:</strong> Agregar las dependencias de Retrofit y el conversor GSON en <span class="code-inline">libs.versions.toml</span> (Pág. 151).
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-count">2</div>
+                        <div>
+                            <strong>Permisos:</strong> Declarar el permiso de <span class="code-inline">INTERNET</span> en el archivo <span class="code-inline">AndroidManifest.xml</span> (Pág. 151).
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-count">3</div>
+                        <div>
+                            <strong>Modelado y API:</strong> Crear la clase <span class="code-inline">Estudiante</span> (POJO) y una Interface que defina las peticiones <span class="code-inline">@GET</span> (Págs. 152).
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-count">4</div>
+                        <div>
+                            <strong>UI y Adaptador:</strong> Implementar un <span class="code-inline">ListView</span> en el XML y un <span class="code-inline">ArrayAdapter</span> en Java para visualizar los datos (Pág. 153).
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RESULTADO FINAL -->
+            <div style="text-align: center;">
+                <h2>Resultado en el Dispositivo (Pág. 154)</h2>
+                <p>Al ejecutar la app con el servidor activo, los nombres se cargan dinámicamente:</p>
+                <div class="mobile-mockup">
+                    <div class="screen">
+                        <div style="background: var(--azul-oscuro); color: white; padding: 10px; margin-bottom: 10px; font-size: 0.9rem; text-align: center;">Lista de Estudiantes</div>
+                        <div class="list-item"><i class="fas fa-user-circle"></i> Juan</div>
+                        <div class="list-item"><i class="fas fa-user-circle"></i> Maria</div>
+                        <div class="list-item"><i class="fas fa-user-circle"></i> Luisa</div>
+                        <div class="list-item"><i class="fas fa-user-circle"></i> Mauricio</div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <div class="page-nav">
+            <a href="t1_s3.html" class="btn-nav btn-prev"><i class="fas fa-arrow-left"></i> Subtema 3: Node.js</a>
+            <a href="../u4/t2_s1.html" class="btn-nav btn-next">Tema 2: Híbridas (PWA) <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </div>
+
+    <footer style="text-align: center; padding: 2rem; font-size: 0.8rem; color: #888;">
+        UNEMI - Computación Móvil
+    </footer>
+
+</body>
+</html>

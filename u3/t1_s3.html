@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ciclo de Vida y Layouts | Computación Móvil</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="../logo_computacion_movil.svg">
+    <style>
+        :root {
+            --azul-oscuro: #1a2e44;
+            --naranja: #f37021;
+            --gris-fondo: #f8f9fa;
+            --blanco: #ffffff;
+            --metodo-color: #2c3e50;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            background-color: var(--gris-fondo);
+            color: #444;
+        }
+
+        nav {
+            background-color: var(--azul-oscuro);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a { color: white; text-decoration: none; font-weight: bold; }
+
+        .container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            background: var(--blanco);
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.05);
+        }
+
+        .header-tema {
+            border-bottom: 3px solid var(--naranja);
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+        }
+
+        /* Fases de la App */
+        .app-phases {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 1.5rem 0;
+        }
+
+        .phase-badge {
+            background: var(--azul-oscuro);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+
+        /* Ciclo de Vida Activity */
+        .lifecycle-container {
+            background: #f1f3f5;
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            border-left: 5px solid var(--naranja);
+        }
+
+        .method-item {
+            margin-bottom: 15px;
+            padding-left: 15px;
+            border-left: 2px solid #cbd5e0;
+        }
+
+        .method-name {
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            color: var(--naranja);
+            font-size: 1.1rem;
+        }
+
+        /* Secciones de View y Layout */
+        .grid-tech {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 2rem;
+        }
+
+        .tech-card {
+            border: 1px solid #eee;
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+
+        .tech-card h3 { color: var(--azul-oscuro); margin-top: 0; }
+
+        .attr-table {
+            width: 100%;
+            font-size: 0.85rem;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        .attr-table td { padding: 8px; border: 1px solid #eee; }
+        .attr-table tr:nth-child(even) { background: #fafafa; }
+
+        .page-nav {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #eee;
+        }
+
+        .btn-nav { padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: bold; }
+        .btn-prev { background: #eee; color: #555; }
+        .btn-next { background: var(--azul-oscuro); color: white; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="../index.html"><i class="fas fa-home"></i> Inicio</a>
+        <span style="color: white;">Unidad 3 > Conceptos Core</span>
+    </nav>
+
+    <div class="container">
+        <div class="header-tema">
+            <span style="color: var(--naranja); font-weight: bold;">TEMA 1 - SUBTEMA 3</span>
+            <h1>Ciclo de Vida, Actividades y Layouts</h1>
+        </div>
+
+        <section>
+            <h2>1. Fases del Ciclo de Vida de una App</h2>
+            <p>Antes de programar, una aplicación atraviesa fases críticas de gestión (Pág. 101):</p>
+            <div class="app-phases">
+                <span class="phase-badge">1. Planificación</span>
+                <span class="phase-badge">2. Desarrollo</span>
+                <span class="phase-badge">3. Test</span>
+                <span class="phase-badge">4. Lanzamiento</span>
+                <span class="phase-badge">5. Monitorización</span>
+            </div>
+            <p><small><strong>Monitorización:</strong> Es vital analizar el comportamiento del usuario y no solo el número de descargas (Pág. 102).</small></p>
+
+            <h2>2. ¿Qué es una Activity?</h2>
+            <p>Es una "pantalla" de la aplicación. Se compone de (Pág. 102):</p>
+            <ul>
+                <li><strong>Clase:</strong> El código lógico (extiende de <code>AppCompatActivity</code>).</li>
+                <li><strong>Layout:</strong> La apariencia visual definida en XML.</li>
+                <li><strong>AndroidManifest:</strong> Donde se registra la actividad para que el sistema la reconozca.</li>
+            </ul>
+
+            <div class="lifecycle-container">
+                <h3><i class="fas fa-redo"></i> Ciclo de Vida de una Activity (Pág. 103)</h3>
+                <p>Métodos que el sistema invoca según el estado de la pantalla:</p>
+                
+                <div class="method-item">
+                    <span class="method-name">onCreate()</span>: Primer paso. Se invoca al crear la Activity.
+                </div>
+                <div class="method-item">
+                    <span class="method-name">onStart()</span>: La Activity se está iniciando y se hace visible.
+                </div>
+                <div class="method-item">
+                    <span class="method-name">onResume()</span>: El usuario ya puede interactuar con la pantalla.
+                </div>
+                <div class="method-item">
+                    <span class="method-name">onPause()</span>: Otra actividad se pone en primer plano (parcialmente visible).
+                </div>
+                <div class="method-item">
+                    <span class="method-name">onStop()</span>: La Activity ya no es visible para el usuario.
+                </div>
+                <div class="method-item">
+                    <span class="method-name">onDestroy()</span>: La Activity se destruye completamente.
+                </div>
+            </div>
+
+            <div class="grid-tech">
+                <!-- VIEW -->
+                <div class="tech-card">
+                    <h3><i class="fas fa-eye"></i> El Componente VIEW</h3>
+                    <p>Gestiona la interacción del usuario (botones, textos, etc.). Atributos clave (Pág. 104):</p>
+                    <table class="attr-table">
+                        <tr><td><strong>layout:height</strong></td><td>Dimensión vertical (dps).</td></tr>
+                        <tr><td><strong>match_parent</strong></td><td>Ajusta al tamaño del padre.</td></tr>
+                        <tr><td><strong>wrap_content</strong></td><td>Ajusta al contenido interno.</td></tr>
+                        <tr><td><strong>layout:margin</strong></td><td>Márgenes externos.</td></tr>
+                        <tr><td><strong>id</strong></td><td>Identificador para el código Java.</td></tr>
+                    </table>
+                </div>
+
+                <!-- LAYOUT -->
+                <div class="tech-card">
+                    <h3><i class="fas fa-layer-group"></i> El Espacio LAYOUT</h3>
+                    <p>Contenedor que define la disposición de las Vistas (Pág. 105):</p>
+                    <ul style="font-size: 0.9rem; padding-left: 20px;">
+                        <li><strong>LinearLayout:</strong> Organiza elementos en fila o columna (muy sencillo).</li>
+                        <li><strong>RelativeLayout:</strong> Los componentes se organizan de forma relativa entre sí.</li>
+                        <li><strong>WebView:</strong> Utilizado para mostrar contenido con formato web.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <div class="page-nav">
+            <a href="t1_s2.html" class="btn-nav btn-prev"><i class="fas fa-arrow-left"></i> Subtema 2: App de Ejemplo</a>
+            <a href="t1_s4.html" class="btn-nav btn-next">Subtema 4: Componentes <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </div>
+
+    <footer style="text-align: center; padding: 2rem; font-size: 0.8rem; color: #888;">
+        UNEMI - Computación Móvil
+    </footer>
+
+</body>
+</html>
